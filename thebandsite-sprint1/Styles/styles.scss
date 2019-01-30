@@ -1,0 +1,438 @@
+/* ------- VARIABLES ------ */
+
+$black: #323232;
+$white: #FFFFFF;
+$silver: #AFAFAF;
+$alablaster: #FAFAFA;
+$regularFont: AvenirNextRegular;
+$boldFont: AvenirNextBold;
+$demiBoldFont: AvenirNextDemiBold;
+$desktopMargin: 180px;
+
+
+/* ------- FONTS ------ */
+
+@font-face {
+  font-family: AvenirNextRegular;
+  src: url("../Assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Regular.otf");
+}
+
+@font-face {
+  font-family: AvenirNextBold;
+  src: url("../Assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Bold.otf");
+}
+
+@font-face {
+  font-family: AvenirNextDemiBold;
+  src: url("../Assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Demi.otf");
+}
+
+
+/* ------- GLOBAL ------ */
+
+* {
+  overflow-x: hidden;
+  color: $black;
+  font-family: $regularFont;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+  color: $black;
+  padding: 48px 0;
+  font-family: $boldFont;
+  margin: 0;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: $boldFont;
+  display: block;
+  margin: 0;
+  padding: 48px 0 0 0;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: $demiBoldFont;
+  padding-top: 40px;
+  margin: 0;
+}
+
+p {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: $regularFont;
+}
+
+h4, li, .nav__item > a {
+  font-size: 14px;
+  line-height: 20px;
+  color: $white;
+  font-family: $regularFont;
+}
+
+h5, th, td {
+  font-size: 12px;
+  line-height: 20px;
+  font-family: $regularFont;
+}
+
+.h1_heroHeader {
+  font-size: 60px;
+  line-height: 68px;
+  color: $white;
+  font-family: $boldFont;
+}
+
+/* ------- HEADER/NAV ------ */
+
+header, nav {
+  height: 80px;
+  width: 100%;
+  background-color: $black;
+}
+
+nav {
+  display: flex;/* 
+  width: 100%;
+  height: 80px;
+  background-color: $black; */
+}
+
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0 0 0 $desktopMargin;
+  align-items: center;
+  padding: 0;
+  overflow: hidden;
+  justify-content: center;
+}
+
+header nav ul li {
+  margin-right: 56px;
+  text-align: center;
+}
+
+.nav {
+  &__item {
+    width: 80px;
+    padding: 30px 0 27px 0;
+    border-bottom: 3px solid $black;
+  }
+
+  &__logo {
+    padding: 0;
+  }
+
+  &__currentPage {
+    border-bottom: 3px solid $white;
+  }
+}
+
+
+a, a:link, a:visited {
+  text-decoration: none;
+}
+
+nav li:hover {
+  text-decoration: none;
+  border-bottom: 3px solid $white;
+}
+
+
+/* ------- MAIN ------ */
+
+.main {
+  display: flex;
+
+  &__background {
+    height: 670px;
+    width: 100%;
+    background-size: cover;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 0 100vmax rgba(50, 50, 50, 0.5);
+    z-index: -1;
+  }
+
+  &__shows {
+    background-image: url("../Assets/Images/shows.jpg");
+    box-shadow: none;
+  }
+
+  &__artistName {
+    width: 600px;
+    margin-left: $desktopMargin;
+  }
+}
+
+
+.biography {
+  background-image: url("../Assets/Images/album_hero.jpg");
+}
+
+
+/* ------- MAIN CONTENT ------ */
+
+.content {
+  display: flex;
+  margin-bottom: 48px;
+
+  &__main {
+    padding: 0px $desktopMargin;
+  }
+
+  &__mainCenter {
+    padding: 0 96px;
+  }
+}
+
+.photoContent__main {
+  padding: 0px $desktopMargin;
+}
+
+.img__about {
+  width: 896px;
+  height: 450px;
+  display: flex;
+}
+
+.h2__quote {
+  max-width: 800px;
+}
+
+.p__shortBio1, .p__shortBio2 {
+  width: 420px;
+  padding: 32px 40px 0 0;
+  display: inline-block;
+  margin: 0;
+}
+
+.p__shortBio2 {
+  padding: 32px 0 0 0;
+}
+
+/* ------- PICTURE GALLERY ------ */
+
+.photoContent {
+  background-color: $alablaster;
+  display: flex;
+
+  &__photoGallery {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__gallery {
+    width: 344px;
+    height: 193px;
+    padding-bottom: 24px;
+    filter: grayscale(100%);
+  }
+
+  &__gallery:hover {
+    filter: grayscale(0);
+  }
+
+  &__photos {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+
+/* ------- FOOTER ------ */
+
+footer {
+  height: 400px;
+  width: 100%;
+  background-color: $black;
+}
+
+.footer {
+  &__footer1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 $desktopMargin 0 $desktopMargin;
+    align-items: center;
+  }
+
+  &__footer2 {
+    display: flex;
+    margin: 8px $desktopMargin 8px $desktopMargin;
+  }
+
+  &__footer3 {
+    display: flex;
+    margin: 40px $desktopMargin 32px $desktopMargin;
+  }
+
+  &__foot1 {
+    display: flex;
+  }
+
+  &__foot2 {
+    width: 300px;
+  }
+
+  &__inline {
+    width: 284px;
+    margin: 0;
+  }
+
+  &__socialMediaLogo {
+    padding: 0 16px;
+    height: auto;
+  }
+
+  &__logoFooter {
+    height: 24px;
+    width: 120px;
+  }
+
+  &__footRight {
+    height: 24px;
+  }
+}
+
+
+
+/* ------- MISC/RESET ------ */
+
+.color {
+  &__white {
+    color: $white;
+  }
+
+  &__black {
+    color: $black;
+  }
+
+  &__silver {
+    color: $silver;
+  }
+}
+
+
+.margin--reset {
+  margin: 0;
+}
+
+.padding--sm {
+  padding: 24px 0 24px 0;
+}
+
+.padding--lg {
+  padding-top: 56px;
+}
+
+
+
+/* ------- SHOWS PAGE ------ */
+
+.main {
+  &__soundcloud {
+    padding-left: 64px;
+  }
+
+  &__album {
+    margin-left: 180px;
+    padding-top: 160px;
+    width: 600px;
+  }
+
+  &__shows {
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+}
+
+
+.content__shows {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+table {
+  width: 804px;
+  padding-top: 48px;
+  border-spacing: 0;
+}
+
+th, td {
+  text-align: left;
+  padding: 0;
+}
+
+th {
+  color: $silver;
+}
+
+td {
+  border-bottom: $silver 1px solid;
+  color: $black;
+}
+
+.table {
+  &__padding {
+    padding: 30px 0;
+  }
+
+  &__date {
+    font-family: $demiBoldFont;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__button {
+    text-align:right;
+  }
+
+  &__buttonWidth {
+    width: 20%;
+  }
+
+  &__ticketButton {
+    color: $white;
+    border-radius: 4px;
+    background-color: $black;
+    text-align: center;
+    border: 1px black solid;
+    width: 160px;
+    height: 48px;
+  }
+}
+
+
+/* 
+.table__noBorder {
+  border: none;
+} */
+
+/* ------- IMPORT MEDIA CLASSES ------ */
+
+/* ------- TABLET ------ */
+@import 'tablet';
+
+/* ------- MOBILE ------ */
+@import 'mobile';
+
