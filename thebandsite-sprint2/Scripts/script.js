@@ -19,8 +19,8 @@ var commentArray = [
 ];
 
 
-// function that adds the comments to the page
-function addCommentToPage(commentName, commentDate, commentComment) {
+// function that displays the comments to the page
+function displayComment(commentName, commentDate, commentComment) {
 
 
   // calculate days since last post
@@ -104,7 +104,7 @@ function addCommentToPage(commentName, commentDate, commentComment) {
 // add the comments from the array to the page
 function addToPage() {
   for (var i = 0; i < commentArray.length; i++) {
-    addCommentToPage(commentArray[i].name, commentArray[i].date, commentArray[i].comment);
+    displayComment(commentArray[i].name, commentArray[i].date, commentArray[i].comment);
   };
 };
 // run the function addToPage
@@ -126,7 +126,7 @@ document.getElementById("commentContent__addButton").addEventListener("click", f
   var clearDiv = document.getElementById('commentJava');
   while (clearDiv.firstChild)
     clearDiv.removeChild(clearDiv.firstChild);
-
+  
   addToPage();
 
   // clear the form
