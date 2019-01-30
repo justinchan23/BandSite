@@ -1,0 +1,104 @@
+/* MEDIA FOR TABLET------------- */
+
+
+@media screen and (max-width: 1300px) {
+  /* ------- VARIABLES ------ */
+  $tabletMargin: 24px;
+  
+  /* ------- HEADER/NAV ------ */
+  
+    header nav ul {
+      margin-left: $tabletMargin;
+    }
+  
+  /* ------- MAIN ------ */
+  
+    .main__background {
+      height: 400px;
+    }
+  
+  /* ------- MAIN CONTENT ------ */
+  
+    .content__main, .photoContent__main {
+      padding: 0px $tabletMargin;
+    }
+  
+    .main__artistName {
+      margin-left: $tabletMargin;
+    }
+  
+    .content__mainCenter {
+      padding: 0;
+    }
+  
+    .p__shortBio1, .p__shortBio2 {
+      width: 330px;
+      padding: 0 $tabletMargin 0 0;
+    }
+
+    .p__shortBio2 {
+      margin-top: 16px;
+    }
+  
+  /* ------- GALLERY ------ */
+  
+    .img__about {
+      height: 362px;
+      width: 720px;
+    }
+  
+    .photoContent__gallery {
+      width: 224px;
+      height: 126px;
+    }
+  
+  /* ------- FOOTER CLASSES ------ */
+    .footer__footer1, .footer__footer2, .footer__footer3 {
+      margin-left: $tabletMargin;
+      margin-right: $tabletMargin;
+    }
+  
+    .shows {
+      height: 670px;
+    }
+
+    .main__soundcloud {
+      padding-left: $tabletMargin;
+    }
+  
+    .main__album {
+      margin-left: $tabletMargin;
+      padding-top: 96px;
+      width: 600px;
+    }
+
+  /* ------- SHOWS PAGE ------ */
+
+    table {
+      width: 720px;
+      padding-top: 0;
+    }
+
+    .main__shows {
+      height: 670px;
+    }
+
+  /* ------- COMMENT SECTION ------ */
+
+    .commentContent__main {
+      padding: 0px $tabletMargin;
+    }
+
+    .commentJava__section {
+      /*margin: 0 96px;*/
+      padding: 24px 0;
+/*       width: 528px; */
+    }
+
+  }
+
+  @media screen and (min-width: 883px) {
+    table {
+      padding-top: 48px;
+    }
+  }
