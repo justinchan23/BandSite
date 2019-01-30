@@ -22,7 +22,6 @@ var commentArray = [
 // function that displays the comments to the page
 function displayComment(commentName, commentDate, commentComment) {
 
-
   // calculate days since last post
   var date1 = new Date(commentDate).getTime();
   var today = new Date().getTime();
@@ -56,26 +55,24 @@ function displayComment(commentName, commentDate, commentComment) {
     dateSince = seconds + " seconds ago"
   };
 
-
-
   // image creation
   var img = document.createElement("img");
   img.className = "commentJava__pic";
   img.src = "Assets/Images/Gallery/Mohan-muruge.jpg";
   // end of image creation
 
-  // create a div and place inside the comment section
+  // create a div
   var div = document.createElement("div");
   div.className = "commentJava__section";
   // end of div creation
 
-  // name
+  // name of comment
   var name1 = document.createElement("h4");
   var nameText = document.createTextNode(commentName);
   name1.className = "commentJava__name";
   name1.appendChild(nameText);
 
-  //date
+  //date of comment calculated by days, hours, minutes, seconds
   var date1 = document.createElement("h5");
   var dateCurrent = document.createTextNode(dateSince);
   date1.className = "commentJava__date";
@@ -87,7 +84,7 @@ function displayComment(commentName, commentDate, commentComment) {
   comment1.className = "commentJava__comment";
   comment1.appendChild(commentCurrent);
 
-  //add the comment to a div
+  //add the comment componenets to a div
   div.appendChild(img);
   div.appendChild(name1);
   div.appendChild(date1);
@@ -107,16 +104,19 @@ function addToPage() {
     displayComment(commentArray[i].name, commentArray[i].date, commentArray[i].comment);
   };
 };
+
 // run the function addToPage
 addToPage();
 
 
 //event listener for adding a comment
-document.getElementById("commentContent__addButton").addEventListener("click", function () {
+document.getElementById("commentContent__addButton").addEventListener("click", formValidation);
 
+
+function addComment() {
   //retrieve the values inputted in the form
-  var x = document.getElementById("name").value;
-  var y = document.getElementById("comment").value;
+  var x = document.forms["commentSubmit"]["name"].value;
+  var y = document.forms["commentSubmit"]["comment"].value;
   var today = new Date();
 
   //push new comment into the array
@@ -127,10 +127,26 @@ document.getElementById("commentContent__addButton").addEventListener("click", f
   while (clearDiv.firstChild)
     clearDiv.removeChild(clearDiv.firstChild);
   
+  // add comments to page
   addToPage();
 
   // clear the form
   document.getElementById("commentSubmit").reset();
+};
 
-});
 
+// check the form to make sure all fields are filled out
+function formValidation() {
+  // retrive value of 
+  var formName = document.forms["commentSubmit"]["name"].value;
+  var formComment = document.forms["commentSubmit"]["comment"].value;
+  if (formName == "" || formComment == "") {
+    // if form fields are not valid, alert and do not add comment
+    alert("All fields must be filled out");
+    return false;
+  }
+  else {
+    // if the form fields are validated, proceed to add comment to page
+    addComment();
+  }
+}
