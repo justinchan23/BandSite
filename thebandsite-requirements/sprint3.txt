@@ -1,0 +1,49 @@
+Project: The Band Site - Sprint III
+Project Overview
+Good work! The final week before the site goes live is upon us, and the client has good news; their back-end team has finished making the API for you to integrate with it.
+
+In This Project You Will
+Extend the functionality of your multi-page site by connecting to an API which will serve the comments and shows data.
+Please use the following URL to access the API: https://project-1-api.herokuapp.com/.
+Given that this sprint is focused on connecting to an API, no additional design package is needed. However, please click here for the API documentation.
+Requirements
+Feedback from previous sprints should be implemented
+
+If you have questions about how to implement a piece of feedback, ask someone from the education team!
+The site must use axios (imported using a CDN) or FETCH for the API HTTP requests
+
+You must use addEventListener to register your event handler functions, instead of using HTML onsubmit/onclick attributes
+
+Given the provided API, refactor the existing functionality to use the API endpoints as a datasource. Specifically, change your code so that:
+
+When the "home" page loads, it should use a GET request to retrieve the comment data from the API and show it on the page, instead of using your hardcoded sample comments array.
+When the user submits a new comment through the comment form, the submit / click event listener POSTS the new comment to the API to save it.
+When the "shows" page loads, it should use a GET request to retrieve the shows/tour data from the API and display it in the table.
+Note: When communicating with the API, you will need to supply an API key in order to authenticate yourself. Instructions for how to work with the API can be found at the API documentation link below.
+
+Note: For this final deliverable, it is expected that you will implement all of the feedback that the "client" has given you from the previous two sprints.
+
+Hint: Use postman to test out the API before trying to access it from JavaScript. This will help you to concretely understand what is needed to make it work.
+
+The site should be responsive and therefore closely resemble the provided mockups
+
+The CSS must use SASS variables
+
+The CSS must use BEM principals when naming classes
+
+The site should use Flexbox for layout control
+
+Tools
+Your deliverable must make use of the following tools:
+
+Live SASS Compiler
+Postman
+See Requirement Level Key Words
+
+Diving Deeper
+Comment Delete Functionality
+The provided comment API has a DELETE endpoint that you can use to delete comments. This diving deeper requires adding a delete button to each comment. When clicked, this button triggers a function that hits the API and deletes the comment both from the API and also from the DOM. Information about the comment delete endpoint can be found in the API documentation.
+
+Note: While understanding and applying the functionality for deleting comments is important, maintaining the visual integrity of the page is also important. Add the delete button in a way that does not interfere with the layout of the site and matches the overall aesthetic of the page.
+
+Please note that Diving Deeper challenges should only be attempted if all project requirements are met. Attempting to do so without completing the project requirements will result in your actual deliverable being incomplete which will be reflected in its assessment.

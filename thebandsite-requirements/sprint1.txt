@@ -1,0 +1,47 @@
+Project: The Band Site - Sprint I
+Project Overview
+Congratulations! You have been contracted by a large record label to build a website for their next big-hit band. However, there is a catch: the project has a hard deadline of three weeks, as the site must coincide with the release of the band’s new album. With deliverables due each week, it’s time to roll up your sleeves!
+
+The record label has contracted a design firm which has completed a set of approved creative mockups. By the end of the three weeks, the label is expecting you to convert the entire set of mockups into a functional and dynamic site.
+
+In This Project You Will
+Make use of a design package (assets, style guide, spec sheet, and creative mockup) to create a functional and responsive site.
+Please download the complete design package here.
+Requirements
+The site must be responsive and therefore should closely resemble the mockups in the design package
+You must source your own images for the following:
+Album hero image
+Band members image
+Please ensure that you use royalty-free images whenever you source assets for a project. Unsplash is a great resource for royalty-free images
+You must use the provided assets to create your photo gallery
+The project's CSS must use SASS variables
+The CSS must use BEM principles when naming classes
+The site should use Flexbox for layout control
+Tools
+Your deliverable must make use of the following tools:
+
+Live SASS Compiler
+See Requirement Level Key Words
+
+Diving Deeper
+Applying Pseudo-classes
+Navigation Hover Effects:
+
+Often, nav bars incorporate some sort of hover functionality to help users identify where they are on the page, and also to add some polish to the overall feel of the site.
+
+Your task is to add a hover effect in the style of your choosing to the navigation of this web site. See here for a brief overview of pseudo-classes mentioned previously in Synapse.
+
+Photo Gallery Hover:
+
+Website photo galleries are another area where hover effects are often applied. Use pseudo-classes to have the images grayscaled by default, and when the user hovers over each image it returns to color. This feature must make use of a CSS filter.
+
+Applying Page Functionality
+Return Home Link:
+
+Located in the top-left corner of the nav is the word / logo " BANDSITE". Clicking on this should return visitors to the home page.
+
+Mailto Link:
+
+Located in the footer of the web page is the contact information for several agents. Clicking on the email addresses listed should open up a user's mail account where they can begin to draft a message to the specific contact.
+
+Please note that Diving Deeper challenges should only be attempted if all project requirements are met. Attempting to do so without completing the project requirements will hinder your success in building upon previous work across sprints.

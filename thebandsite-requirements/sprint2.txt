@@ -1,0 +1,46 @@
+Project: The Band Site - Sprint II
+Project Overview
+The record label is very happy with your work over the last sprint. Based on recent developments, the label would also like to make some changes that need to be implemented over this current sprint. In addition, the label has another team currently working on a back-end system to be integrated with your work. The problem is that back-end team will not be finished until next week.
+
+Given the current situation, you will need to start implementing a few new features to ensure that the project is as ready as possible for the final sprint. With that said, the label has provided updated creative mockups to reflect the changes.
+
+In This Project You Will
+Make use of a design package (assets, style guide, spec sheet, and creative mockup) to create a functional and responsive site.
+Leverage JavaScript to add basic interactivity and functionality to your site.
+Create a multi-page site through developing a connected second page.
+Please download the complete design package here
+Requirements
+The site must be responsive and therefore should closely resemble the mockups in the design package
+The project's CSS must use SASS variables
+The CSS must use BEM principles when naming classes
+The site should use Flexbox for layout control
+You must use the provided assets to create your photo gallery
+Comment Section
+Given the updated mockups, add a comments section to the Bio page, which must dynamically update
+In your JavaScript, create an array that contains at least 3 objects representing sample comments
+Create a function, displayComment() that takes in one comment object as a parameter and displays it on the page using JavaScript DOM manipulation
+Create an HTML form whose click or submit event listener does the following:
+Prevents the page from reloading when submitting a new comment
+Constructs a new comment object
+Pushes a new comment object to an array of comments
+Clears all comments from the page
+Re-renders to the page all comments from the comment array
+Clears the input fields after submitting a new comment
+Note: you will see this form reflected in the creative mockup as a comment box
+You must use addEventListener to register your event handler functions, instead of using HTML onsubmit/onclick attributes
+The handler must run a function that adds the comment to an array of comments
+The comment array must be used to dynamically generate the comment section of the site
+Shows Page
+Given the new set of mockups, build the “Shows” page, which must use an HTML table for the "Tour Dates" section
+You must embed a song of your choice from SoundCloud using an iframe
+Tools
+Your deliverable must make use of the following tools:
+
+Live SASS Compiler
+See Requirement Level Key Words
+
+Diving Deeper
+Dynamic Timestamp
+To add a more refined feel to the site, let's update the timestamp in the comments section to reflect when it was posted in a more human-readable format. Using YouTube as an example, a recently posted comment might display the time posted as "10 minutes ago" or "3 days ago". Apply this type of timestamp to your data without hardcoding the actual message.
+
+Please note that Diving Deeper challenges should only be attempted if all project requirements are met. Attempting to do so without completing the project requirements will hinder your success in building upon previous work across sprints.
