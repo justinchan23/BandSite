@@ -255,7 +255,7 @@ nav li:hover {
 
 .photoContent__photos {
   padding-top: 16px;
-  padding-bottom: 16px;
+  padding-bottom: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -614,7 +614,7 @@ input:focus, textarea:focus {
 /* ------- IMPORT MEDIA CLASSES ------ */
 /* ------- TABLET ------ */
 /* MEDIA FOR TABLET------------- */
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
   /* ------- VARIABLES ------ */
   /* ------- HEADER/NAV ------ */
   header nav ul {
@@ -649,6 +649,10 @@ input:focus, textarea:focus {
   .photoContent__gallery {
     width: 224px;
     height: 126px;
+  }
+  .photoContent__photos {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   /* ------- FOOTER CLASSES ------ */
   .footer__footer1, .footer__footer2, .footer__footer3 {
@@ -688,6 +692,30 @@ input:focus, textarea:focus {
 @media screen and (min-width: 883px) {
   table {
     padding-top: 48px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .photoContent__gallery {
+    width: 288px;
+    height: 162px;
+    padding-bottom: 16px;
+  }
+  .photoContent__photos {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  input, textarea {
+    max-width: 306px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  input, textarea {
+    max-width: 206px;
   }
 }
 

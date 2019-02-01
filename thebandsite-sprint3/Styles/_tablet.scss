@@ -1,7 +1,7 @@
 /* MEDIA FOR TABLET------------- */
 
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
   /* ------- VARIABLES ------ */
   $tabletMargin: 24px;
   
@@ -51,6 +51,11 @@
       width: 224px;
       height: 126px;
     }
+
+    .photoContent__photos {
+      justify-content: space-around;
+    }
+
   
   /* ------- FOOTER CLASSES ------ */
     .footer__footer1, .footer__footer2, .footer__footer3 {
@@ -102,3 +107,31 @@
       padding-top: 48px;
     }
   }
+
+  @media screen and (max-width: 767px) {
+    .photoContent {
+
+      &__gallery {
+        width: 288px;
+        height: 162px;
+        padding-bottom: 16px;
+      }
+      &__photos {
+        justify-content: space-around;
+      }
+    }
+  }
+   
+  @media screen and (max-width: 480px) {
+    input, textarea {
+      max-width: 306px;
+    }
+  }
+
+   
+  @media screen and (max-width: 380px) {
+    input, textarea {
+      max-width: 206px;
+    }
+  }
+

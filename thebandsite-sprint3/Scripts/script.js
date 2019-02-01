@@ -1,13 +1,13 @@
 
 const url = "https://project-1-api.herokuapp.com/comments/";
-const apiKey = "?api_key=4164168b-4ef3-4ecf-ae54-28420446fa94";
+const apiKey = "?api_key=575a63cb-7f6b-4471-a448-6a2c140e86c1";
 
 
 // fetch the comments from the api and load to page
 fetch(url + apiKey, {
   method: 'get',
-}).then((response) => response.json())
-  .then((myJson) => {
+}).then(response => response.json())
+  .then(myJson => {
     var comment = myJson;
     commentLength = comment.length
     for (var i = 0; i < comment.length; i++) {
@@ -15,7 +15,7 @@ fetch(url + apiKey, {
       addCommentToPage(comment[i].name, dateCon, comment[i].comment, comment[i].id);
     };
   })
-  .catch((error) => console.log(error));
+  .catch(error => console.log(error));
 
 
 // event listener for adding a comment
@@ -132,14 +132,14 @@ function addCommentEvent() {
     headers: {
       'Content-Type': 'application/json'
     }
-  }).then((response) => response.json())
-    .then((myJson) => {
+  }).then(response => response.json())
+    .then(myJson => {
       // get the id of the comment from the response of the server
       var idNumber = myJson.id;
       // add the new comment to the page
       addCommentToPage(x, today, y, idNumber);
     })
-    .catch((error) => console.log(error));
+    .catch(error => console.log(error));
 
   //reset the form to blank
   document.getElementById("commentSubmit").reset();
@@ -150,26 +150,26 @@ function addCommentEvent() {
 // delete comment function
 function deleteComment() {
   // retrieve the id of the button clicked
-  var z = this.id;
+  var deleteCommentId = this.id;
 
   //assign id of comment to 'data' variable to send to api
   var data = {
-    "id": z,
+    "id": deleteCommentId,
   };
 
   //delete the comment from the api
-  fetch(url + z + apiKey, {
+  fetch(url + deleteCommentId + apiKey, {
     method: 'delete',
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json'
     }
-  }).then((response) => response.json())
-    .catch((error) => console.log(error));
+  }).then(response => response.json())
+    .catch(error => console.log(error));
 
 
   // remove the comment from the page
-  document.getElementById(z).remove();
+  document.getElementById(deleteCommentId).remove();
 
 }
 
@@ -179,7 +179,7 @@ function formValidation() {
   // retrive value of 
   var formName = document.forms["commentSubmit"]["name"].value;
   var formComment = document.forms["commentSubmit"]["comment"].value;
-  if (formName == "" || formComment == "") {
+  if (formName === "" || formComment === "") {
     // if form fields are not valid, alert and do not add comment
     alert("All fields must be filled out");
     return false;

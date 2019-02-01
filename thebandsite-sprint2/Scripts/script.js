@@ -113,6 +113,7 @@ addToPage();
 document.getElementById("commentContent__addButton").addEventListener("click", formValidation);
 
 
+// function to add comment to page
 function addComment() {
   //retrieve the values inputted in the form
   var x = document.forms["commentSubmit"]["name"].value;
