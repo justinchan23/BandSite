@@ -120,6 +120,13 @@
   }
   @media screen and (max-width: 1088px) {
     .photoContent__gallery {
+      width: 264px;
+      height: 140px;
+    }
+  }
+
+  @media screen and (max-width: 940px) {
+    .photoContent__gallery {
       width: 224px;
       height: 126px;
     }
@@ -154,8 +161,8 @@
     }
 
     .photoContent__gallery {
-      width: 288px;
-      height: 162px;
+      width: 360px;
+      height: 204px;
       padding-bottom: 16px;
     }
   }
