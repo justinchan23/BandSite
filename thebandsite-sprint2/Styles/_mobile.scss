@@ -273,7 +273,7 @@
     .commentJava__section {
       @include marginZero;
       padding: 24px 0;
-      width: 100%;
+      @include maxWidth;
     }
 
     .commentJava__comment {

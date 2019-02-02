@@ -147,7 +147,7 @@
     }
 
       .img__about {
-        width: 100%;
+        @include maxWidth;
         height: auto;
       }
 
@@ -203,7 +203,7 @@
     }
 
     header nav ul {
-      margin: 0;
+      @include marginZero;
       padding: 0;
       flex-wrap: wrap;
       flex-direction: row;
@@ -212,7 +212,7 @@
     }
     
     header nav ul li {
-      margin: 0;
+      @include marginZero;
       padding: 8px 0;
     }
 
@@ -301,7 +301,7 @@
       content: attr(data-label);
       display: block;
       padding: 8px 0 16px 0;
-      color: $silver;
+      @include colorSilver;
       font-size: 12px;
       line-height: 20px;
       font-family: $demiBoldFont;

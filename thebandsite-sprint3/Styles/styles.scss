@@ -62,7 +62,7 @@ $desktopMargin: 180px;
 
 * {
   overflow-x: hidden;
-  color: $black;
+  @include colorBlack;
   font-family: $regularFont;
 }
 
@@ -435,7 +435,7 @@ td {
   }
 
   &__ticketButton {
-    color: $white;
+    @include colorWhite;
     border-radius: 4px;
     background-color: $black;
     text-align: center;
@@ -579,7 +579,7 @@ input:focus, textarea:focus {
   }
 
   &__name {
-    color: $black;
+    @include colorBlack;
     display: inline-block;
     margin: 0 0 0 16px;
     vertical-align: top;
