@@ -20,7 +20,7 @@
     }
     
     header nav ul {
-      margin: 0;
+      @include marginZero;
       padding: 0;
       flex-wrap: wrap;
       flex-direction: row;
@@ -29,7 +29,7 @@
     }
     
     header nav ul li {
-      margin: 0;
+      @include marginZero;
       padding: 8px 0;
     }
       
@@ -64,13 +64,13 @@
     }
   
     .p__shortBio1, .p__shortBio2 {
-      width: 100%;
+      @include maxWidth;
       padding: 0;
       word-wrap: break-word;
     }
   
     .img__about {
-      width: 100%;
+      @include maxWidth;
       height: auto;
     }
   
@@ -232,7 +232,7 @@
       content: attr(data-label);
       display: block;
       padding: 8px 0 16px 0;
-      color: $silver;
+      @include colorSilver;
       font-size: 12px;
       line-height: 20px;
       font-family: $demiBoldFont;
@@ -271,7 +271,7 @@
     }
 
     .commentJava__section {
-      margin: 0;
+      @include marginZero;
       padding: 24px 0;
       width: 100%;
     }

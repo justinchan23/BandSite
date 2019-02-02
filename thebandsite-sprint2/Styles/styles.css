@@ -1,4 +1,5 @@
 /* ------- VARIABLES ------ */
+/* ------- MIXINS ------ */
 /* ------- FONTS ------ */
 @font-face {
   font-family: AvenirNextRegular;
@@ -89,10 +90,6 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* 
-  width: 100%;
-  height: 80px;
-  background-color: $black; */
 }
 
 header nav ul {
@@ -376,12 +373,12 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 table {
@@ -507,15 +504,15 @@ td {
 
 .commentContent__h1 {
   width: 100%;
-  padding-top: 48px;
 }
 
 .commentContent__delete {
   border-radius: 4px;
   border: 1px black solid;
-  margin-left: 16px;
+  margin-top: 12px;
   background-color: #323232;
   color: #FFFFFF;
+  float: right;
 }
 
 form {

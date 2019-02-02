@@ -10,6 +10,35 @@ $boldFont: AvenirNextBold;
 $demiBoldFont: AvenirNextDemiBold;
 $desktopMargin: 180px;
 
+/* ------- MIXINS ------ */
+@mixin flex {
+  display: flex;
+}
+
+@mixin flexAndWrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin colorBlack {
+  color: $black;
+}
+
+@mixin colorWhite {
+  color: $white;
+}
+
+@mixin colorSilver {
+  color: $silver;
+}
+
+@mixin maxWidth {
+  width: 100%;
+}
+
+@mixin marginZero {
+  margin: 0;
+}
 
 /* ------- FONTS ------ */
 
@@ -38,16 +67,16 @@ $desktopMargin: 180px;
 }
 
 body {
-  margin: 0;
+  @include marginZero;
 }
 
 h1 {
   font-size: 36px;
   line-height: 44px;
-  color: $black;
+  @include colorBlack;
   padding: 48px 0;
   font-family: $boldFont;
-  margin: 0;
+  @include marginZero;
 }
 
 h2 {
@@ -55,7 +84,7 @@ h2 {
   line-height: 32px;
   font-family: $boldFont;
   display: block;
-  margin: 0;
+  @include marginZero;
   padding: 48px 0 0 0;
 }
 
@@ -64,7 +93,7 @@ h3 {
   line-height: 24px;
   font-family: $demiBoldFont;
   padding-top: 40px;
-  margin: 0;
+  @include marginZero;
 }
 
 p {
@@ -76,7 +105,7 @@ p {
 h4, li, .nav__item > a {
   font-size: 14px;
   line-height: 20px;
-  color: $white;
+  @include colorWhite;
   font-family: $regularFont;
 }
 
@@ -89,7 +118,7 @@ h5, th, td {
 .h1_heroHeader {
   font-size: 60px;
   line-height: 68px;
-  color: $white;
+  @include colorWhite;
   font-family: $boldFont;
 }
 
@@ -97,19 +126,16 @@ h5, th, td {
 
 header, nav {
   height: 80px;
-  width: 100%;
+  @include maxWidth;
   background-color: $black;
 }
 
 nav {
-  display: flex;/* 
-  width: 100%;
-  height: 80px;
-  background-color: $black; */
+  @include flex;
 }
 
 header nav ul {
-  display: flex;
+  @include flex;
   list-style-type: none;
   margin: 0 0 0 $desktopMargin;
   align-items: center;
@@ -153,18 +179,18 @@ nav li:hover {
 /* ------- MAIN ------ */
 
 .main {
-  display: flex;
+  @include flex;
 
   &__background {
     height: 670px;
-    width: 100%;
+    @include maxWidth;
     background-size: cover;
     overflow: hidden;
     background-repeat: no-repeat;
     background-position: center;
     border: none;
     opacity: 1;
-    display: flex;
+    @include flex;
     align-items: center;
     box-shadow: inset 0 0 0 100vmax rgba(50, 50, 50, 0.5);
     z-index: -1;
@@ -189,7 +215,7 @@ nav li:hover {
 /* ------- MAIN CONTENT ------ */
 
 .content {
-  display: flex;
+  @include flex;
   margin-bottom: 48px;
 
   &__main {
@@ -208,7 +234,7 @@ nav li:hover {
 .img__about {
   width: 896px;
   height: 450px;
-  display: flex;
+  @include flex;
 }
 
 .h2__quote {
@@ -219,7 +245,7 @@ nav li:hover {
   width: 420px;
   padding: 32px 40px 0 0;
   display: inline-block;
-  margin: 0;
+  @include marginZero;
 }
 
 .p__shortBio2 {
@@ -230,11 +256,10 @@ nav li:hover {
 
 .photoContent {
   background-color: $alablaster;
-  display: flex;
+  @include flex;
 
   &__photoGallery {
-    display: flex;
-    flex-wrap: wrap;
+    @include flexAndWrap;
   }
 
   &__gallery {
@@ -251,8 +276,7 @@ nav li:hover {
   &__photos {
     padding-top: 16px;
     padding-bottom: 24px;
-    display: flex;
-    flex-wrap: wrap;
+    @include flexAndWrap;
     justify-content: space-between;
   }
 }
@@ -262,30 +286,30 @@ nav li:hover {
 
 footer {
   height: 400px;
-  width: 100%;
+  @include maxWidth;
   background-color: $black;
 }
 
 .footer {
   &__footer1 {
-    display: flex;
+    @include flex;
     justify-content: space-between;
     margin: 0 $desktopMargin 0 $desktopMargin;
     align-items: center;
   }
 
   &__footer2 {
-    display: flex;
+    @include flex;
     margin: 8px $desktopMargin 8px $desktopMargin;
   }
 
   &__footer3 {
-    display: flex;
+    @include flex;
     margin: 40px $desktopMargin 32px $desktopMargin;
   }
 
   &__foot1 {
-    display: flex;
+    @include flex;
   }
 
   &__foot2 {
@@ -294,7 +318,7 @@ footer {
 
   &__inline {
     width: 284px;
-    margin: 0;
+    @include marginZero;
   }
 
   &__socialMediaLogo {
@@ -318,21 +342,21 @@ footer {
 
 .color {
   &__white {
-    color: $white;
+    @include colorWhite;
   }
 
   &__black {
-    color: $black;
+    @include colorBlack;
   }
 
   &__silver {
-    color: $silver;
+    @include colorSilver;
   }
 }
 
 
 .margin--reset {
-  margin: 0;
+  @include marginZero;
 }
 
 .padding--sm {
@@ -366,10 +390,9 @@ footer {
 
 
 .content__shows {
-  display: flex;
-  width: 100%;
+  @include flexAndWrap;
+  @include maxWidth;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 table {
@@ -384,12 +407,12 @@ th, td {
 }
 
 th {
-  color: $silver;
+  @include colorSilver;
 }
 
 td {
   border-bottom: $silver 1px solid;
-  color: $black;
+  @include colorBlack;
 }
 
 .table {
@@ -433,11 +456,11 @@ td {
 
 .commentContent {
   background-color: $white;
-  display: flex;
+  @include flex;
   align-content: center;
 
   &__button {
-    color: $white;
+    @include colorWhite;
     border-radius: 4px;
     background-color: $black;
     text-align: center;
@@ -448,9 +471,8 @@ td {
 
   &__main {
     padding: 0 $desktopMargin;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    @include maxWidth;
+    @include flexAndWrap;
     justify-content: center;
   }
 
@@ -491,16 +513,16 @@ td {
   }
 
   &__h1 {
-    width: 100%;
-    padding-top: 48px
+    @include maxWidth;
   }
 
   &__delete {
     border-radius: 4px;
     border: 1px black solid;
-    margin-left: 16px;
+    margin-top: 12px;
     background-color: $black;
-    color: $white;
+    @include colorWhite;
+    float: right;
   }
 }
 
@@ -519,7 +541,7 @@ input, textarea {
 label {
   font-size: 12px;
   line-height: 20px;
-  color: $silver;
+  @include colorSilver;
 }
 
 input {
@@ -531,7 +553,7 @@ form {
 }
 
 ::placeholder {
-  color: $black;
+  @include colorBlack;
 }
 
 input:focus, textarea:focus { 
@@ -564,7 +586,7 @@ input:focus, textarea:focus {
   }
 
   &__date {
-    color: $silver;
+    @include colorSilver;
     display: inline-block;
     margin: 0 0 0 10px;
     vertical-align: top;
@@ -578,8 +600,7 @@ input:focus, textarea:focus {
 
 #commentJava {
   margin-bottom: 40px;
-  display: flex;
-  flex-wrap: wrap;
+  @include flexAndWrap;
   justify-content: center;
 }
 
