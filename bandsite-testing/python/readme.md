@@ -1,20 +1,23 @@
-# readme:
+readme:
+
+v1
+1. This script is for testing the comment section on 'The Band Site' project
 
 
-# 1. This script is for testing the comment section on 'The Band Site' project
+2. It will autofill the comment form and click the submit button
 
 
-# 2. It will autofill the comment form and click the submit button
+3. You must change the page_link, nameFieldId, commentFieldId, commentButtonId to reflect the ones used in your document.
 
 
-# 3. You must change the page_link, nameFieldId, commentFieldId, commentButtonId to reflect the ones used in your document.
+4. You must have selenium installed, enter this in terminal to install:
+python -m pip install -U selenium
 
 
-# 4. You must have selenium installed, enter this in terminal to install:
-# python -m pip install -U selenium
+5. To run, enter this command in terminal - python test.py
 
 
-# 5. To run, enter this command in terminal - python test.py
+6. Happy testing =)
 
-
-# 6. Happy testing =)
+v2.
+7. Added option to add more than 1 comment when program is run. Also various names and comments are randomly populated for further testing.
