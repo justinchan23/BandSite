@@ -47,8 +47,12 @@ function displayComment(commentName, commentDate, commentComment) {
   // conditional to determine output of days, hours, minutes or seconds
   if (days > 0) {
     dateSince = days + " days ago";
+  } else if (days == 0 & hours == 1) {
+    dateSince = hours + " hour ago";
   } else if (days == 0 & hours > 0) {
     dateSince = hours + " hours ago";
+  } else if (hours == 0 & minutes == 1) {
+    dateSince = minutes + " minute ago"
   } else if (hours == 0 & minutes > 0) {
     dateSince = minutes + " minutes ago"
   } else {
