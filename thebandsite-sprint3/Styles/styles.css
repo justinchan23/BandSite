@@ -705,8 +705,12 @@ input:focus, textarea:focus {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
+  .img__about {
+    width: 100%;
+    height: auto;
+  }
   input, textarea {
-    width: 365px;
+    width: 442px;
   }
   .commentJava__section {
     margin: 0;
@@ -716,6 +720,9 @@ input:focus, textarea:focus {
 @media screen and (max-width: 590px) {
   .footer__footRight {
     display: none;
+  }
+  input, textarea {
+    width: 360px;
   }
 }
 
@@ -754,11 +761,86 @@ input:focus, textarea:focus {
     margin: 0;
     padding: 8px 0;
   }
+  .main__shows {
+    height: 472px;
+  }
+  .main__artistNameShow {
+    padding-top: 0;
+  }
+  .main__soundcloud {
+    padding-left: 16px;
+    width: 288px;
+    margin-top: 40px;
+  }
+  .main__album {
+    margin-left: 16px;
+    padding-top: 40px;
+    width: 300px;
+  }
+  .main__artistName {
+    width: 250px;
+    margin-left: 16px;
+  }
+  .content__header {
+    padding: 32px 0 16px 0;
+  }
+  h1, .h1_heroHeader {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: AvenirNextBold;
+    padding: 32px 0 24px 0;
+  }
+  h2 {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-family: AvenirNextDemiBold;
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 380px) {
   input, textarea {
     max-width: 206px;
+  }
+  table {
+    width: 288px;
+  }
+  th, td {
+    display: block;
+  }
+  td {
+    text-align: left;
+  }
+  td > .table_button {
+    border-bottom: #AFAFAF 1px solid;
+  }
+  .table__padding {
+    padding: 0;
+    margin-top: 24px;
+    border: none;
+  }
+  table td.table__padding::before {
+    content: attr(data-label);
+    display: block;
+    padding: 8px 0 16px 0;
+    color: #AFAFAF;
+    font-size: 12px;
+    line-height: 20px;
+    font-family: AvenirNextDemiBold;
+  }
+  thead {
+    display: none;
+  }
+  .table__ticketButton {
+    width: 288px;
+    height: 48px;
+    text-align: center;
+    margin: 32px 0 16px 0;
+  }
+  .table__date {
+    width: 50%;
   }
 }
 
@@ -818,7 +900,7 @@ input:focus, textarea:focus {
     word-wrap: break-word;
   }
   .img__about {
-    width: 288px;
+    width: 100%;
     height: auto;
   }
   /* ------- GALLERY ------ */

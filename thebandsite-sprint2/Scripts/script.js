@@ -64,31 +64,33 @@ function displayComment(commentName, commentDate, commentComment) {
   // create a div
   var div = document.createElement("div");
   div.className = "commentJava__section";
+  div.innerHTML = '<img src="Assets/Images/Gallery/Mohan-muruge.jpg" class="commentJava__pic"><h4 class="commentJava__name">' + commentName + '</h4><h5 class="commentJava__date">' + dateSince + '</h5><p class="commentJava__comment">' + commentComment + '</p>'
   // end of div creation
 
-  // name of comment
-  var name1 = document.createElement("h4");
-  var nameText = document.createTextNode(commentName);
-  name1.className = "commentJava__name";
-  name1.appendChild(nameText);
+  // this code was used before but switch to innerhtml as its shorter
+  // // name of comment
+  // var name1 = document.createElement("h4");
+  // var nameText = document.createTextNode(commentName);
+  // name1.className = "commentJava__name";
+  // name1.appendChild(nameText);
 
-  //date of comment calculated by days, hours, minutes, seconds
-  var date1 = document.createElement("h5");
-  var dateCurrent = document.createTextNode(dateSince);
-  date1.className = "commentJava__date";
-  date1.appendChild(dateCurrent);
+  // //date of comment calculated by days, hours, minutes, seconds
+  // var date1 = document.createElement("h5");
+  // var dateCurrent = document.createTextNode(dateSince);
+  // date1.className = "commentJava__date";
+  // date1.appendChild(dateCurrent);
 
-  //comment
-  var comment1 = document.createElement("p");
-  var commentCurrent = document.createTextNode(commentComment);
-  comment1.className = "commentJava__comment";
-  comment1.appendChild(commentCurrent);
+  // //comment
+  // var comment1 = document.createElement("p");
+  // var commentCurrent = document.createTextNode(commentComment);
+  // comment1.className = "commentJava__comment";
+  // comment1.appendChild(commentCurrent);
 
-  //add the comment componenets to a div
-  div.appendChild(img);
-  div.appendChild(name1);
-  div.appendChild(date1);
-  div.appendChild(comment1);
+  // //add the comment componenets to a div
+  // div.appendChild(img);
+  // div.appendChild(name1);
+  // div.appendChild(date1);
+  // div.appendChild(comment1);
 
   //write the div html to the page in reverse order
   var before1 = document.getElementById("commentJava");

@@ -116,13 +116,20 @@
         height: 162px;
         padding-bottom: 16px;
       }
+
       &__photos {
         justify-content: space-around;
       }
     }
 
+      .img__about {
+        width: 100%;
+        height: auto;
+      }
+
+
     input, textarea {
-      width: 365px;
+      width: 442px;
     }
 
     .commentJava__section {
@@ -134,6 +141,11 @@
     .footer__footRight {
       display: none;
     }
+
+    input, textarea {
+      width: 360px;
+    }
+    
   }
 
   @media screen and (max-width: 480px) {
@@ -170,6 +182,54 @@
       margin: 0;
       padding: 8px 0;
     }
+
+
+    .main {
+      &__shows {
+        height: 472px;
+      }
+
+      &__artistNameShow {
+        padding-top: 0;
+      }
+
+      &__soundcloud {
+        padding-left: 16px;
+        width: 288px;
+        margin-top: 40px;
+      }
+
+      &__album {
+        margin-left: 16px;
+        padding-top: 40px;
+        width: 300px;
+      }
+
+      &__artistName {
+        width: 250px;
+        margin-left: 16px;
+      }
+    }
+
+    .content__header {
+      padding: 32px 0 16px 0;
+    }
+
+    h1, .h1_heroHeader {
+      font-size: 24px;
+      line-height: 32px;
+      font-family: $boldFont;
+      padding: 32px 0 24px 0;
+    }
+
+    h2 {
+      font-size: 14px;
+      line-height: 22px;
+      margin-top: 24px;
+      margin-bottom: 24px;
+      font-family: $demiBoldFont;
+      padding: 0;
+    }
   }
 
    
@@ -177,5 +237,55 @@
     input, textarea {
       max-width: 206px;
     }
+
+    table {
+      width: 288px;
+    }
+
+    th, td {
+      display: block;
+    }
+
+    td {
+      text-align: left;
+    }
+
+    td > .table_button {
+      border-bottom: $silver 1px solid;
+    }
+
+    .table__padding {
+      padding: 0;
+      margin-top: 24px;
+      border: none;
+    }
+
+    table td.table__padding::before {
+      content: attr(data-label);
+      display: block;
+      padding: 8px 0 16px 0;
+      color: $silver;
+      font-size: 12px;
+      line-height: 20px;
+      font-family: $demiBoldFont;
+    }
+
+    thead {
+      display: none;
+    }
+
+    .table__ticketButton {
+      width: 288px;
+      height: 48px;
+      text-align: center;
+      margin: 32px 0 16px 0;
+    }
+
+    .table__date {
+      width: 50%;
+    }
+
+
+    
   }
 

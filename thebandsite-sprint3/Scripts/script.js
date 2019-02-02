@@ -124,6 +124,7 @@ function addCommentEvent() {
     "name": x,
     "comment": y
   };
+  
 
   //post the comment to the api
   fetch(url + apiKey, {
