@@ -1,22 +1,25 @@
 
 const url = "https://project-1-api.herokuapp.com/comments/";
-const apiKey = "?api_key=575a63cb-7f6b-4471-a448-6a2c140e86c1";
+const apiKey = "?api_key=33f74e24-9540-4fe2-adb7-2fcb20a322f4";
 
 
 // fetch the comments from the api and load to page
-fetch(url + apiKey, {
-  method: 'get',
-}).then(response => response.json())
-  .then(myJson => {
-    var comment = myJson;
-    commentLength = comment.length
-    for (var i = 0; i < comment.length; i++) {
-      var dateCon = new Date(comment[i].timestamp);
-      addCommentToPage(comment[i].name, dateCon, comment[i].comment, comment[i].id);
-    };
-  })
-  .catch(error => console.log(error));
+function getComments() {
+  fetch(url + apiKey, {
+    method: 'get',
+  }).then(response => response.json())
+    .then(myJson => {
+      var comment = myJson;
+      commentLength = comment.length
+      for (var i = 0; i < comment.length; i++) {
+        var dateCon = new Date(comment[i].timestamp);
+        addCommentToPage(comment[i].name, dateCon, comment[i].comment, comment[i].id);
+      };
+    })
+    .catch(error => console.log(error));
+}
 
+getComments();
 
 // event listener for adding a comment
 document.getElementById("commentContent__addButton").addEventListener("click", formValidation)
@@ -108,13 +111,14 @@ function addCommentEvent() {
     headers: {
       'Content-Type': 'application/json'
     }
-  }).then(response => response.json())
-    .then(myJson => {
-      // get the id of the comment from the response of the server
-      var idNumber = myJson.id;
-      // add the new comment to the page
-      addCommentToPage(nameValue, today, commentValue, idNumber);
-    })
+  }).then(reloadComments = () => {
+    // remove all the comments from the page
+    var clearDiv = document.getElementById('commentJava');
+    while (clearDiv.firstChild)
+      clearDiv.removeChild(clearDiv.firstChild);
+    // call the getComment function to load comments to page
+    getComments();
+  })
     .catch(error => console.log(error));
 
   //reset the form to blank
