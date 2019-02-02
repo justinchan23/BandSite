@@ -95,7 +95,6 @@ function displayComment(commentName, commentDate, commentComment) {
   //write the div html to the page in reverse order
   var before1 = document.getElementById("commentJava");
   before1.insertBefore(div, before1.childNodes[0]);
-  //document.getElementById('commentJava').appendChild(div);
 
 };
 
