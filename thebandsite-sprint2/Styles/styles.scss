@@ -179,11 +179,10 @@ nav li:hover {
     width: 600px;
     margin-left: $desktopMargin;
   }
-}
 
-
-.biography {
-  background-image: url("../Assets/Images/album_hero.jpg");
+  &__biography {
+    background-image: url("../Assets/Images/album_hero.jpg");
+  }
 }
 
 

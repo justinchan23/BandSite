@@ -177,7 +177,7 @@ nav li:hover {
   margin-left: 180px;
 }
 
-.biography {
+.main__biography {
   background-image: url("../Assets/Images/album_hero.jpg");
 }
 
@@ -705,11 +705,54 @@ input:focus, textarea:focus {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
+  input, textarea {
+    width: 365px;
+  }
+  .commentJava__section {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .footer__footRight {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 480px) {
   input, textarea {
-    max-width: 306px;
+    width: 265px;
+  }
+  nav {
+    height: 80px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .nav__item {
+    padding: 8px 0;
+    width: 50%;
+  }
+  .nav__logo {
+    padding: 0 70px;
+  }
+  header nav ul {
+    margin: 0;
+    padding: 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  header nav ul li {
+    margin: 0;
+    padding: 8px 0;
   }
 }
 
