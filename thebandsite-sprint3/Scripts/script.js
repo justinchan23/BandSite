@@ -59,51 +59,53 @@ function addCommentToPage(commentName, commentDate, commentComment, idString) {
 
   // creating all the tags here
   // image creation
-  var img = document.createElement("img");
-  img.className = "commentJava__pic";
-  img.src = "Assets/Images/Gallery/Mohan-muruge.jpg";
+  // var img = document.createElement("img");
+  // img.className = "commentJava__pic";
+  // img.src = "Assets/Images/Gallery/Mohan-muruge.jpg";
   // end of image creation
 
   // create a div and place inside the comment section
   var div = document.createElement("div");
   div.className = "commentJava__section";
   div.id = idString;
+  div.innerHTML = '<img src="Assets/Images/Gallery/Mohan-muruge.jpg" class="commentJava__pic"><h4 class="commentJava__name">' + commentName + '</h4><h5 class="commentJava__date">' + dateSince + '</h5><p class="commentJava__comment">' + commentComment + '</p>'
   // end of div creation
 
-  // name
-  var name1 = document.createElement("h4");
-  var nameText = document.createTextNode(commentName);
-  name1.className = "commentJava__name";
-  name1.appendChild(nameText);
+  // // name
+  // var name1 = document.createElement("h4");
+  // name1.innerHTML = commentName;
+  // name1.className = "commentJava__name";
+  // // name1.appendChild(nameText);
 
-  // date
-  var date1 = document.createElement("h5");
-  var dateCurrent = document.createTextNode(dateSince);
-  date1.className = "commentJava__date";
-  date1.appendChild(dateCurrent);
+  // // date
+  // var date1 = document.createElement("h5");
+  // date1.innerHTML = dateSince;
+  // date1.className = "commentJava__date";
+  // // date1.appendChild(dateCurrent);
 
   // delete button
   var delete1 = document.createElement("button");
-  var deleteText = document.createTextNode("Delete");
+  delete1.innerHTML = "Delete"
   delete1.className = "commentContent__delete";
   //delete1.setAttribute("data-label", idString);
   delete1.id = idString;
-  delete1.appendChild(deleteText);
+  // delete1.appendChild(deleteText);
   // event listener for deleting comment
   delete1.addEventListener('click', deleteComment);
 
-  // comment
-  var comment1 = document.createElement("p");
-  var commentCurrent = document.createTextNode(commentComment);
-  comment1.className = "commentJava__comment";
-  comment1.appendChild(commentCurrent);
+  // // comment
+  // var comment1 = document.createElement("p");
+  // comment1.innerHTML = commentComment;
+  // comment1.className = "commentJava__comment";
+  // //comment1.appendChild(commentCurrent);
 
-  // add everything to a div
-  div.appendChild(img);
-  div.appendChild(name1);
-  div.appendChild(date1);
+  // // add everything to a div
+  // div.appendChild(img);
+  // div.appendChild(name1);
+  // div.appendChild(date1);
+  // div.appendChild(comment1);
   div.appendChild(delete1);
-  div.appendChild(comment1);
+
 
   // write the div html to the page in reverse order
   var before1 = document.getElementById("commentJava");

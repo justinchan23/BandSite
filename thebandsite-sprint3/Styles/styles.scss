@@ -497,9 +497,10 @@ td {
   &__delete {
     border-radius: 4px;
     border: 1px black solid;
-    margin-left: 16px;
+    margin-top: 12px;
     background-color: $black;
     color: $white;
+    float: right;
   }
 }
 
