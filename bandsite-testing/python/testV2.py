@@ -15,9 +15,9 @@ import random
 
 
 # these values must be changed to reflect those in your html
-page_link = 'http://127.0.0.1:5500/webDevProjects/thebandsite-sprint2/index.html' # put the link to your page here
+page_link = 'http://127.0.0.1:5500/webDevProjects/thebandsite-sprint3/index.html' # put the link to your page here
 commentButtonId = 'commentContent__addButton' #the ID of the 'commemt' button in your form
-numberOfComments = 10 #the number of comments you would like to add to the page
+numberOfComments = 100 #the number of comments you would like to add to the page
 
 
 
@@ -28,7 +28,7 @@ driver.maximize_window()
 driver.get(page_link)
 
 name = ['John Doe', 'Deloise Beachum', 'Shera Ciesla', 'Harley Sturrock', 'Aleisha Pfau', 'Adolph Rather', 'Gerald Fairall', 'Nolan Burg', 'Renetta Bailey', 'Breana Gault']
-comments = ['Lorem ipsum dolor sit amet, an ridens facilis fuisset duo, eum ea harum dolore. Error graece oblique at vim. Tation timeam eleifend qui et. Ex soluta scribentur est, an viderer senserit mei, viris essent quodsi sea te. Probo tincidunt in his, tota posse duo ne.', 'This is a test message', 'Hello world, you are looking incredibly great today.', 'This message has no text.', 'I hope this is my final comment.', 'Some people come into our lives and leave footprints on our hearts, while others come into our lives and make us wanna leave footprints on their face.', 'Thank you Facebook, I can now farm without going outside, cook without being in my kitchen, feed fish I don\'t have & waste an entire day without having a life.', 'Life is full of temporary situations, ultimately ending in a permanent solution.' , 'It\'s gonna take a lot to take me away from you There\'s nothing that a hundred men or more could ever do I bless the rains down in Africa Gonna take some time to do the things we never have.', 'I see trees of green........ red roses too I see em bloom..... for me and for you And I think to myself.... what a wonderful world.']
+comments = ['Lorem ipsum dolor sit amet, an ridens facilis fuisset duo, eum ea harum dolore. Error graece oblique at vim. Tation timeam eleifend qui et. Ex soluta scribentur est, an viderer senserit mei, viris essent quodsi sea te. Probo tincidunt in his, tota posse duo ne.', 'This is a test message', 'Hello world, you are looking incredibly great today.', 'This message has this text.', 'I hope this is my final comment.', 'Some people come into our lives and leave footprints on our hearts, while others come into our lives and make us wanna leave footprints on their face.', 'Thank you Facebook, I can now farm without going outside, cook without being in my kitchen, feed fish I don\'t have & waste an entire day without having a life.', 'Life is full of temporary situations, ultimately ending in a permanent solution.' , 'It\'s gonna take a lot to take me away from you There\'s nothing that a hundred men or more could ever do I bless the rains down in Africa Gonna take some time to do the things we never have.', 'I see trees of green........ red roses too I see em bloom..... for me and for you And I think to myself.... what a wonderful world.']
 for x in range(numberOfComments):
 
     a = random.randint(0,9)
