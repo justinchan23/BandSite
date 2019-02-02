@@ -76,7 +76,6 @@ function addCommentToPage(commentName, commentDate, commentComment, idString) {
   // add delete button to comment div
   div.appendChild(delete1);
 
-
   // write the div html to the page in reverse order
   var before1 = document.getElementById("commentJava");
   before1.insertBefore(div, before1.childNodes[0]);
@@ -96,7 +95,7 @@ function addCommentEvent() {
     "name": nameValue,
     "comment": commentValue
   };
-  
+
 
   //post the comment to the api
   fetch(url + apiKey, {
