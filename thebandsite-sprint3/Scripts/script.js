@@ -57,12 +57,6 @@ function addCommentToPage(commentName, commentDate, commentComment, idString) {
     dateSince = seconds + " seconds ago"
   };
 
-  // creating all the tags here
-  // image creation
-  // var img = document.createElement("img");
-  // img.className = "commentJava__pic";
-  // img.src = "Assets/Images/Gallery/Mohan-muruge.jpg";
-  // end of image creation
 
   // create a div and place inside the comment section
   var div = document.createElement("div");
@@ -71,39 +65,15 @@ function addCommentToPage(commentName, commentDate, commentComment, idString) {
   div.innerHTML = '<img src="Assets/Images/Gallery/Mohan-muruge.jpg" class="commentJava__pic"><h4 class="commentJava__name">' + commentName + '</h4><h5 class="commentJava__date">' + dateSince + '</h5><p class="commentJava__comment">' + commentComment + '</p>'
   // end of div creation
 
-  // // name
-  // var name1 = document.createElement("h4");
-  // name1.innerHTML = commentName;
-  // name1.className = "commentJava__name";
-  // // name1.appendChild(nameText);
-
-  // // date
-  // var date1 = document.createElement("h5");
-  // date1.innerHTML = dateSince;
-  // date1.className = "commentJava__date";
-  // // date1.appendChild(dateCurrent);
-
   // delete button
   var delete1 = document.createElement("button");
   delete1.innerHTML = "Delete"
   delete1.className = "commentContent__delete";
-  //delete1.setAttribute("data-label", idString);
   delete1.id = idString;
-  // delete1.appendChild(deleteText);
   // event listener for deleting comment
   delete1.addEventListener('click', deleteComment);
 
-  // // comment
-  // var comment1 = document.createElement("p");
-  // comment1.innerHTML = commentComment;
-  // comment1.className = "commentJava__comment";
-  // //comment1.appendChild(commentCurrent);
-
-  // // add everything to a div
-  // div.appendChild(img);
-  // div.appendChild(name1);
-  // div.appendChild(date1);
-  // div.appendChild(comment1);
+  // add delete button to comment div
   div.appendChild(delete1);
 
 
@@ -117,14 +87,14 @@ function addCommentToPage(commentName, commentDate, commentComment, idString) {
 
 function addCommentEvent() {
   // retrieve the values inputted in the form
-  var x = document.forms["commentSubmit"]["name"].value;
-  var y = document.forms["commentSubmit"]["comment"].value;
+  var nameValue = document.forms["commentSubmit"]["name"].value;
+  var commentValue = document.forms["commentSubmit"]["comment"].value;
   var today = new Date();
 
   //assign form data into json array
   var data = {
-    "name": x,
-    "comment": y
+    "name": nameValue,
+    "comment": commentValue
   };
   
 
@@ -140,7 +110,7 @@ function addCommentEvent() {
       // get the id of the comment from the response of the server
       var idNumber = myJson.id;
       // add the new comment to the page
-      addCommentToPage(x, today, y, idNumber);
+      addCommentToPage(nameValue, today, commentValue, idNumber);
     })
     .catch(error => console.log(error));
 

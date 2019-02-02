@@ -47,10 +47,10 @@
       width: 720px;
     }
   
-    .photoContent__gallery {
-      width: 224px;
-      height: 126px;
-    }
+    // .photoContent__gallery {
+    //   width: 224px;
+    //   height: 126px;
+    // }
 
     .photoContent__photos {
       justify-content: space-around;
@@ -74,7 +74,7 @@
     .main__album {
       margin-left: $tabletMargin;
       padding-top: 96px;
-      width: 600px;
+      width: 800px;
     }
 
   /* ------- SHOWS PAGE ------ */
@@ -100,11 +100,28 @@
 /*       width: 528px; */
     }
 
+    .commentContent__h1 {
+      padding-top: 32px;
+    }
+
   }
 
   @media screen and (min-width: 883px) {
     table {
       padding-top: 48px;
+    }
+
+    .photoContent_gallery {
+      width: 344px;
+      height: 193px;
+      padding-bottom: 16px;
+    }
+
+  }
+  @media screen and (max-width: 1088px) {
+    .photoContent__gallery {
+      width: 224px;
+      height: 126px;
     }
   }
 
@@ -112,8 +129,8 @@
     .photoContent {
 
       &__gallery {
-        width: 288px;
-        height: 162px;
+        width: 224px;
+        height: 126px;
         padding-bottom: 16px;
       }
 
@@ -135,6 +152,12 @@
     .commentJava__section {
       margin: 0;
     }
+
+    .photoContent__gallery {
+      width: 288px;
+      height: 162px;
+      padding-bottom: 16px;
+    }
   }
    
   @media screen and (max-width: 590px) {
@@ -145,7 +168,11 @@
     input, textarea {
       width: 360px;
     }
-    
+
+    .main__artistName {
+      padding-bottom: 0;
+    }
+
   }
 
   @media screen and (max-width: 480px) {
@@ -230,6 +257,11 @@
       font-family: $demiBoldFont;
       padding: 0;
     }
+
+    .footer__inline {
+      padding-top: 24px;
+    }
+
   }
 
    
@@ -284,8 +316,6 @@
     .table__date {
       width: 50%;
     }
-
-
     
   }
 

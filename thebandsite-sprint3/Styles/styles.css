@@ -647,10 +647,6 @@ input:focus, textarea:focus {
     height: 362px;
     width: 720px;
   }
-  .photoContent__gallery {
-    width: 224px;
-    height: 126px;
-  }
   .photoContent__photos {
     -ms-flex-pack: distribute;
         justify-content: space-around;
@@ -669,7 +665,7 @@ input:focus, textarea:focus {
   .main__album {
     margin-left: 24px;
     padding-top: 96px;
-    width: 600px;
+    width: 800px;
   }
   /* ------- SHOWS PAGE ------ */
   table {
@@ -688,18 +684,33 @@ input:focus, textarea:focus {
     padding: 24px 0;
     /*       width: 528px; */
   }
+  .commentContent__h1 {
+    padding-top: 32px;
+  }
 }
 
 @media screen and (min-width: 883px) {
   table {
     padding-top: 48px;
   }
+  .photoContent_gallery {
+    width: 344px;
+    height: 193px;
+    padding-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: 1088px) {
+  .photoContent__gallery {
+    width: 224px;
+    height: 126px;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .photoContent__gallery {
-    width: 288px;
-    height: 162px;
+    width: 224px;
+    height: 126px;
     padding-bottom: 16px;
   }
   .photoContent__photos {
@@ -716,6 +727,11 @@ input:focus, textarea:focus {
   .commentJava__section {
     margin: 0;
   }
+  .photoContent__gallery {
+    width: 288px;
+    height: 162px;
+    padding-bottom: 16px;
+  }
 }
 
 @media screen and (max-width: 590px) {
@@ -724,6 +740,9 @@ input:focus, textarea:focus {
   }
   input, textarea {
     width: 360px;
+  }
+  .main__artistName {
+    padding-bottom: 0;
   }
 }
 
@@ -798,6 +817,9 @@ input:focus, textarea:focus {
     margin-bottom: 24px;
     font-family: AvenirNextDemiBold;
     padding: 0;
+  }
+  .footer__inline {
+    padding-top: 24px;
   }
 }
 

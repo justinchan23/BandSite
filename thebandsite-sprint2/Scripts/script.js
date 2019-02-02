@@ -67,7 +67,7 @@ function displayComment(commentName, commentDate, commentComment) {
   div.innerHTML = '<img src="Assets/Images/Gallery/Mohan-muruge.jpg" class="commentJava__pic"><h4 class="commentJava__name">' + commentName + '</h4><h5 class="commentJava__date">' + dateSince + '</h5><p class="commentJava__comment">' + commentComment + '</p>'
   // end of div creation
 
-  // this code was used before but switch to innerhtml as its shorter
+  // this code was used before and switched to innerhtml as its shorter syntax
   // // name of comment
   // var name1 = document.createElement("h4");
   // var nameText = document.createTextNode(commentName);
