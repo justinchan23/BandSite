@@ -285,7 +285,7 @@ nav li:hover {
 /* ------- FOOTER ------ */
 
 footer {
-  height: 400px;
+  height: auto;
   @include maxWidth;
   background-color: $black;
 }
@@ -379,7 +379,7 @@ footer {
   &__album {
     margin-left: 180px;
     padding-top: 160px;
-    width: 600px;
+    width: 1000px;
   }
 
   &__shows {

@@ -265,7 +265,7 @@ nav li:hover {
 
 /* ------- FOOTER ------ */
 footer {
-  height: 400px;
+  height: auto;
   width: 100%;
   background-color: #323232;
 }
@@ -359,7 +359,7 @@ footer {
 .main__album {
   margin-left: 180px;
   padding-top: 160px;
-  width: 600px;
+  width: 1000px;
 }
 
 .main__shows {
