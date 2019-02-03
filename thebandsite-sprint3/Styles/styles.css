@@ -616,15 +616,12 @@ input:focus, textarea:focus {
 /* ------- TABLET ------ */
 /* MEDIA FOR TABLET------------- */
 @media screen and (min-width: 1440px) {
-  .photoContent__photoGallery {
-    width: 1080px;
-  }
-  .photoContent {
+  .photoContent, .commentContent {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .content__shows {
+  .content__shows, .commentContent__main, .photoContent__photoGallery {
     width: 1080px;
   }
 }
@@ -773,6 +770,9 @@ input:focus, textarea:focus {
   .p__shortBio1, .p__shortBio2 {
     width: auto;
   }
+  .footer__foot2 {
+    padding-right: 10px;
+  }
 }
 
 @media screen and (max-width: 590px) {
@@ -906,6 +906,40 @@ input:focus, textarea:focus {
   .table__date {
     width: 50%;
   }
+  footer {
+    height: 800px;
+  }
+  .footer__footer1, .footer__footer2, .footer__footer3 {
+    margin: 32px 16px;
+  }
+  .footer__footRight {
+    display: none;
+  }
+  .footer__footer2 {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer__footer3 {
+    width: 220px;
+  }
+  .footer__foot1 {
+    display: block;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .footer__socialMediaLogo {
+    padding: 32px 16px 0 0;
+  }
+  .footer__inline {
+    padding: 24px 0 0 0;
+  }
+  .footer__foot2 {
+    margin-bottom: 24px;
+  }
 }
 
 /* ------- MOBILE ------ */
@@ -978,41 +1012,6 @@ input:focus, textarea:focus {
   }
   .photoContent__photos {
     padding-top: 0;
-  }
-  /* ------- FOOTER ------ */
-  footer {
-    height: 800px;
-  }
-  .footer__footer1, .footer__footer2, .footer__footer3 {
-    margin: 32px 16px;
-  }
-  .footer__footRight {
-    display: none;
-  }
-  .footer__footer2 {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .footer__footer3 {
-    width: 220px;
-  }
-  .footer__foot1 {
-    display: block;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  .footer__socialMediaLogo {
-    padding: 32px 16px 0 0;
-  }
-  .footer__inline {
-    padding: 24px 0 0 0;
-  }
-  .footer__foot2 {
-    margin-bottom: 24px;
   }
   /* ------- GLOBAL/FONTS/RESET ------ */
   .padding--lg {

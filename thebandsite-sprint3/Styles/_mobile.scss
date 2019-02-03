@@ -92,48 +92,6 @@
         
       }
     }
-  
-  /* ------- FOOTER ------ */
-  
-    footer {
-      height: 800px;
-    }
-
-    .footer__footer1, .footer__footer2, .footer__footer3 {
-      margin: 32px 16px;
-    }
-  
-    .footer {
-      &__footRight {
-        display: none;
-      }
-
-      &__footer2 {
-        flex-wrap: wrap;
-        flex-direction: column;
-      }
-
-      &__footer3 {
-        width: 220px;
-      }
-
-      &__foot1 {
-        display: block;
-        flex-wrap: wrap;
-      }
-
-      &__socialMediaLogo {
-        padding: 32px 16px 0 0;
-      }
-
-      &__inline {
-        padding: 24px 0 0 0;
-      }
-
-      &__foot2 {
-        margin-bottom: 24px;
-      }
-    }
 
   
   /* ------- GLOBAL/FONTS/RESET ------ */

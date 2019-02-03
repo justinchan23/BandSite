@@ -1,15 +1,11 @@
 /* MEDIA FOR TABLET------------- */
 
 @media screen and (min-width: 1440px) {
-  .photoContent__photoGallery {
-    width: 1080px;
-  }
-
-  .photoContent {
+  .photoContent, .commentContent {
     justify-content: center;
   }
 
-  .content__shows {
+  .content__shows, .commentContent__main, .photoContent__photoGallery {
     width: 1080px;
   }
 }
@@ -199,6 +195,10 @@
     .p__shortBio1, .p__shortBio2 {
       width: auto;
     }
+
+    .footer__foot2 {
+      padding-right: 10px;
+    }
   }
    
   @media screen and (max-width: 590px) {
@@ -355,8 +355,47 @@
     .table__date {
       width: 50%;
     }
-
-
+  
+    footer {
+      height: 800px;
+    }
+  
+    .footer__footer1, .footer__footer2, .footer__footer3 {
+      margin: 32px 16px;
+    }
     
+    .footer {
+      &__footRight {
+        display: none;
+      }
+  
+      &__footer2 {
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+  
+      &__footer3 {
+        width: 220px;
+      }
+  
+      &__foot1 {
+        display: block;
+        flex-wrap: wrap;
+      }
+  
+      &__socialMediaLogo {
+        padding: 32px 16px 0 0;
+      }
+  
+      &__inline {
+        padding: 24px 0 0 0;
+      }
+  
+      &__foot2 {
+        margin-bottom: 24px;
+      }
+    }
+  
+
   }
 
