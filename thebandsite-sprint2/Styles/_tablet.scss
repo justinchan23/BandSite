@@ -1,5 +1,18 @@
 /* MEDIA FOR TABLET------------- */
 
+@media screen and (min-width: 1440px) {
+  .photoContent__photoGallery {
+    width: 1080px;
+  }
+
+  .photoContent {
+    justify-content: center;
+  }
+
+  .content__shows {
+    width: 1080px;
+  }
+}
 
 @media screen and (max-width: 1400px) {
   /* ------- VARIABLES ------ */
@@ -38,6 +51,10 @@
 
     .p__shortBio2 {
       margin-top: 16px;
+    }
+
+    .h2__quote {
+      width: auto;
     }
   
   /* ------- GALLERY ------ */
@@ -132,6 +149,19 @@
     }
   }
 
+  @media screen and (min-width: 900px) and (max-width: 1400px) {
+    .content__shows {
+      justify-content: space-evenly;
+    }
+
+  }
+  @media screen and (min-width: 780px) and (max-width: 1438px) {
+    .p__shortBio1, .p__shortBio2 {
+      width: 45%;
+    }
+
+  }
+
   @media screen and (max-width: 767px) {
     .photoContent {
 
@@ -164,6 +194,10 @@
       width: 360px;
       height: 204px;
       padding-bottom: 16px;
+    }
+
+    .p__shortBio1, .p__shortBio2 {
+      width: auto;
     }
   }
    

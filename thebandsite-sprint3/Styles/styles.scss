@@ -217,6 +217,7 @@ nav li:hover {
 .content {
   @include flex;
   margin-bottom: 48px;
+  justify-content: center;
 
   &__main {
     padding: 0px $desktopMargin;
@@ -238,7 +239,7 @@ nav li:hover {
 }
 
 .h2__quote {
-  max-width: 800px;
+  width: 800px;
 }
 
 .p__shortBio1, .p__shortBio2 {
