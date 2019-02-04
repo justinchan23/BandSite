@@ -444,6 +444,9 @@ td {
   display: flex;
   -ms-flex-line-pack: center;
       align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .commentContent__button {
@@ -779,18 +782,18 @@ input:focus, textarea:focus {
   .footer__footRight {
     display: none;
   }
-  input, textarea {
-    width: 360px;
-  }
   .main__artistName {
     padding-bottom: 0;
+  }
+  .commentContent__main {
+    width: 288px;
+  }
+  input, textarea {
+    width: 206px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  input, textarea {
-    width: 265px;
-  }
   nav {
     height: 80px;
     -webkit-box-pack: center;
