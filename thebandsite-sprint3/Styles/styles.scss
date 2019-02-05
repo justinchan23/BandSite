@@ -302,6 +302,7 @@ footer {
   &__footer2 {
     @include flex;
     margin: 8px $desktopMargin 8px $desktopMargin;
+    overflow-wrap: break-word;
   }
 
   &__footer3 {
