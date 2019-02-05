@@ -109,8 +109,8 @@
 
     .commentJava__section {
       /*margin: 0 96px;*/
+      /*width: 528px; */
       padding: 24px 0;
-/*       width: 528px; */
     }
 
     .commentContent__h1 {
@@ -160,7 +160,6 @@
 
   @media screen and (max-width: 767px) {
     .photoContent {
-
       &__gallery {
         width: 224px;
         height: 126px;

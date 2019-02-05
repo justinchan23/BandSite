@@ -47,6 +47,7 @@ function addCommentToPage(commentName, commentDate, commentComment, idString) {
   var hours = Math.floor(difference % 24);
 
   // calculate difference between dates in days
+  
   var days = Math.floor(difference / 24);
 
   // conditional to determine output of days, hours, minutes or seconds
@@ -69,7 +70,12 @@ function addCommentToPage(commentName, commentDate, commentComment, idString) {
   var div = document.createElement("div");
   div.className = "commentJava__section";
   div.id = idString;
-  div.innerHTML = '<img src="Assets/Images/Gallery/Mohan-muruge.jpg" class="commentJava__pic"><h4 class="commentJava__name">' + commentName + '</h4><h5 class="commentJava__date">' + dateSince + '</h5><p class="commentJava__comment">' + commentComment + '</p>'
+  div.innerHTML = `
+  <img src="Assets/Images/Gallery/Mohan-muruge.jpg" class="commentJava__pic">
+  <h4 class="commentJava__name">${commentName}</h4>
+  <h5 class="commentJava__date">${dateSince}</h5>
+  <p class="commentJava__comment">${commentComment}</p>
+  `
   // end of div creation
 
   // delete button
@@ -95,7 +101,7 @@ function addCommentEvent() {
   // retrieve the values inputted in the form
   var nameValue = document.forms["commentSubmit"]["name"].value;
   var commentValue = document.forms["commentSubmit"]["comment"].value;
-  var today = new Date();
+  //var today = new Date();
 
   //assign form data into json array
   var data = {
