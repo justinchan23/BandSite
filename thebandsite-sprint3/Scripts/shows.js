@@ -14,9 +14,10 @@ function getShows() {
     .catch(error => console.log(error));
 }
 
-window.onload = () => {
+// get the shows and load to page after page has loaded
+$(function () {
   getShows()
-}
+})
 
 // function that adds the comments to the page
 function addConcerts(concertDate, concertVenue, concertLocation, concertId) {

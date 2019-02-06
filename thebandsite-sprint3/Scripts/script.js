@@ -17,12 +17,11 @@ function getComments() {
 }
 
 // get the comments and load to page after page has loaded
-window.onload = () => {
+$(function () {
   getComments();
-
   // event listener for adding a comment
   $('#commentContent__addButton').click(formValidation)
-}
+})
 
 // function that adds the comments to the page
 function addCommentToPage(commentName, commentDate, commentComment, idString) {
@@ -116,7 +115,7 @@ function addCommentEvent() {
   }).then(reloadComments = () => {
     // remove all the comments from the page
     $('#commentJava').empty();
-    
+
     // call the getComment function to load comments to page
     getComments();
   }).catch(error => console.log(error));
