@@ -89,8 +89,6 @@ function addCommentToPage(commentName, commentDate, commentComment, idString) {
   div.appendChild(delete1);
 
   // write the div html to the page in reverse order
-  // var before1 = document.getElementById("commentJava");
-  // before1.insertBefore(div, before1.childNodes[0]);
   $('#commentJava').prepend(div);
 
 };
@@ -117,7 +115,6 @@ function addCommentEvent() {
     }
   }).then(reloadComments = () => {
     // remove all the comments from the page
-    //$('#commentJava').html('');
     $('#commentJava').empty();
 
     // call the getComment function to load comments to page
@@ -125,7 +122,6 @@ function addCommentEvent() {
   }).catch(error => console.log(error));
 
   //reset the form to blank
-  //document.getElementById("commentSubmit").reset();
   $('#commentSubmit')[0].reset();
 
 }
@@ -143,7 +139,6 @@ function deleteComment() {
 
   //delete the comment from the api
   axios.delete(url + deleteCommentId + apiKey, {
-    //method: 'delete',
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json'
@@ -152,7 +147,6 @@ function deleteComment() {
     .catch(error => console.log(error));
 
   // remove the comment from the page
-  //document.getElementById(deleteCommentId).remove();
   $(`#${deleteCommentId}`).remove();
 
 }
@@ -160,7 +154,7 @@ function deleteComment() {
 
 // check the form to make sure all fields are filled out
 function formValidation() {
-  // retrive value of 
+  // retrive value of form
   var formName = document.forms["commentSubmit"]["name"].value;
   var formComment = document.forms["commentSubmit"]["comment"].value;
   if (formName === "" || formComment === "") {
@@ -177,7 +171,7 @@ function formValidation() {
   }
 }
 
-
+/*
 // this function is used for testing purposes only
 const fill = () => {
 
@@ -196,3 +190,4 @@ const fill = () => {
   submit.click();
   return 'Success!'
 }
+*/

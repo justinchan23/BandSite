@@ -7,9 +7,9 @@ function getShows() {
   axios.get(url + apiKey)
     .then(response => {
       var concert = response.data
-      for (var i = 0; i < concert.length; i++) {
-        addConcerts(concert[i].date, concert[i].place, concert[i].location, concert[i].id);
-      };
+      concert.forEach(value => {
+        addConcerts(value.date, value.place, value.location, value.id);
+      })
     })
     .catch(error => console.log(error));
 }
@@ -63,7 +63,7 @@ function addConcerts(concertDate, concertVenue, concertLocation, concertId) {
   tr.appendChild(button1);
 
   //write the concerts to the page
-  document.getElementById('concert__listings').appendChild(tr);
+  $('#concert__listings').append(tr)
 
 };
 
