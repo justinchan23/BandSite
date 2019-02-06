@@ -19,11 +19,13 @@ function getComments() {
     .catch(error => console.log(error));
 }
 
-getComments();
+window.onload = () => {
+  getComments();
+
 
 // event listener for adding a comment
 document.getElementById("commentContent__addButton").addEventListener("click", formValidation)
-
+}
 
 // function that adds the comments to the page
 function addCommentToPage(commentName, commentDate, commentComment, idString) {
@@ -47,7 +49,7 @@ function addCommentToPage(commentName, commentDate, commentComment, idString) {
   var hours = Math.floor(difference % 24);
 
   // calculate difference between dates in days
-  
+
   var days = Math.floor(difference / 24);
 
   // conditional to determine output of days, hours, minutes or seconds
