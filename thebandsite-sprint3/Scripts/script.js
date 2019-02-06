@@ -16,6 +16,7 @@ function getComments() {
     .catch(error => console.log(error));
 }
 
+// get the comments and load to page after page has loaded
 window.onload = () => {
   getComments();
 
