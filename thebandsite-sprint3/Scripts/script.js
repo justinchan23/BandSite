@@ -1,6 +1,6 @@
 
 const url = "https://project-1-api.herokuapp.com/comments/";
-const apiKey = "?api_key=33f74e24-9540-4fe2-adb7-2fcb20a322f4";
+const apiKey = "?api_key=c7be44ca-4e36-44e8-a90b-22d1ef378802";
 
 
 // fetch the comments from the api and load to page
