@@ -5,11 +5,9 @@ const apiKey = "?api_key=c7be44ca-4e36-44e8-a90b-22d1ef378802";
 
 // fetch the comments from the api and load to page
 function getComments() {
-  fetch(url + apiKey, {
-    method: 'get',
-  }).then(response => response.json())
-    .then(myJson => {
-      var comment = myJson;
+  axios.get(url + apiKey)
+    .then(response => {
+      var comment = response.data;
       commentLength = comment.length
       for (var i = 0; i < comment.length; i++) {
         var dateCon = new Date(comment[i].timestamp);
@@ -112,9 +110,9 @@ function addCommentEvent() {
 
 
   //post the comment to the api
-  fetch(url + apiKey, {
+  axios.post(url + apiKey, data, {
     method: 'post',
-    body: JSON.stringify(data),
+    //body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json'
     }
@@ -145,15 +143,14 @@ function deleteComment() {
   };
 
   //delete the comment from the api
-  fetch(url + deleteCommentId + apiKey, {
-    method: 'delete',
+  axios.delete(url + deleteCommentId + apiKey, {
+    //method: 'delete',
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json'
     }
-  }).then(response => response.json())
+  }).then(response => console.log(response))
     .catch(error => console.log(error));
-
 
   // remove the comment from the page
   document.getElementById(deleteCommentId).remove();
