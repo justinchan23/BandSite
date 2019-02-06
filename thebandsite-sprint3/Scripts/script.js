@@ -116,7 +116,7 @@ function addCommentEvent() {
   }).then(reloadComments = () => {
     // remove all the comments from the page
     $('#commentJava').empty();
-
+    
     // call the getComment function to load comments to page
     getComments();
   }).catch(error => console.log(error));
