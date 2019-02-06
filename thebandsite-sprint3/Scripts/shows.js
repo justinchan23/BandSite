@@ -4,16 +4,17 @@ const apiKey = "?api_key=b23f4ee5-c3bf-4eea-8b67-01d39c9c407e";
 
 function getShows() {
   // fetch the shows from the api and load to page
-  fetch(url + apiKey, {
-    method: 'get',
-  }).then((response) => response.json())
-    .then(function (myJson) {
-      var concert = myJson;
-      for (var i = 0; i < concert.length; i++) {
-        addConcerts(concert[i].date, concert[i].place, concert[i].location, concert[i].id);
-      };
-    })
-    .catch((error) => console.log(error));
+  axios.get(url + apiKey, {
+    params: {
+      method: 'get',
+    }
+  }).then(response => {
+    var concert = response.data
+    for (var i = 0; i < concert.length; i++) {
+      addConcerts(concert[i].date, concert[i].place, concert[i].location, concert[i].id);
+    };
+  })
+    .catch(error => console.log(error));
 }
 
 window.onload = () => {

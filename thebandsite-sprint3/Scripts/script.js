@@ -22,9 +22,8 @@ function getComments() {
 window.onload = () => {
   getComments();
 
-
-// event listener for adding a comment
-document.getElementById("commentContent__addButton").addEventListener("click", formValidation)
+  // event listener for adding a comment
+  document.getElementById("commentContent__addButton").addEventListener("click", formValidation)
 }
 
 // function that adds the comments to the page
