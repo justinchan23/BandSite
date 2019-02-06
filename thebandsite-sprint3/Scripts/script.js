@@ -1,6 +1,6 @@
 
 const url = "https://project-1-api.herokuapp.com/comments/";
-const apiKey = "?api_key=c7be44ca-4e36-44e8-a90b-22d1ef378802";
+const apiKey = "?api_key=25cadaa5-9cad-4892-a867-f96564af9f04";
 
 
 // fetch the comments from the api and load to page
@@ -118,16 +118,17 @@ function addCommentEvent() {
     }
   }).then(reloadComments = () => {
     // remove all the comments from the page
-    var clearDiv = document.getElementById('commentJava');
-    while (clearDiv.firstChild)
-      clearDiv.removeChild(clearDiv.firstChild);
+    //$('#commentJava').html('');
+    $('#commentJava').empty();
+
     // call the getComment function to load comments to page
     getComments();
   })
     .catch(error => console.log(error));
 
   //reset the form to blank
-  document.getElementById("commentSubmit").reset();
+  //document.getElementById("commentSubmit").reset();
+  $('#commentSubmit')[0].reset();
 
 }
 
@@ -153,7 +154,8 @@ function deleteComment() {
     .catch(error => console.log(error));
 
   // remove the comment from the page
-  document.getElementById(deleteCommentId).remove();
+  //document.getElementById(deleteCommentId).remove();
+  $(`#${deleteCommentId}`).remove();
 
 }
 
@@ -175,4 +177,24 @@ function formValidation() {
     // if the form fields are validated, proceed to add comment to page
     addCommentEvent();
   }
+}
+
+
+// this function is used for testing purposes only
+const fill = () => {
+
+  //these values must be changed to reflect those in your html
+  var nameFieldId = 'name' //the ID of the 'name' field in your form
+  var commentFieldId = 'comment'//the ID of the 'comment' field in your form
+  var commentButtonId = 'commentContent__addButton'//the ID of the 'comment' button in your form
+
+  // ----------
+  // do not edit the code below this line
+  var nameValue = 'First Lastname'
+  var commentValue = 'Lorem ipsum dolor sit amet, an ridens facilis fuisset duo, eum ea harum dolore. Error graece oblique at vim. Tation timeam eleifend qui et. Ex soluta scribentur est, an viderer senserit mei, viris essent quodsi sea te. Probo tincidunt in his, tota posse duo ne.'
+  document.getElementById(nameFieldId).value = nameValue
+  document.getElementById(commentFieldId).value = commentValue
+  var submit = document.getElementById(commentButtonId)
+  submit.click();
+  return 'Success!'
 }
