@@ -8,11 +8,10 @@ function getComments() {
   axios.get(url + apiKey)
     .then(response => {
       var comment = response.data;
-      commentLength = comment.length
-      for (var i = 0; i < comment.length; i++) {
-        var dateCon = new Date(comment[i].timestamp);
-        addCommentToPage(comment[i].name, dateCon, comment[i].comment, comment[i].id);
-      };
+      comment.forEach(value => {
+        var dateCon = new Date(value.timestamp);
+        addCommentToPage(value.name, dateCon, value.comment, value.id);
+      })
     })
     .catch(error => console.log(error));
 }
@@ -167,8 +166,11 @@ function formValidation() {
     // if form fields are not valid, alert and do not add comment
     alert("All fields must be filled out");
     return false;
-  }
-  else {
+  } else if (formName.length < 2) {
+    alert("Please enter a valid name")
+  } else if (formComment.length < 2) {
+    alert("Please enter a valid comment")
+  } else {
     // if the form fields are validated, proceed to add comment to page
     addCommentEvent();
   }
