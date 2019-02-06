@@ -21,7 +21,7 @@ window.onload = () => {
   getComments();
 
   // event listener for adding a comment
-  document.getElementById("commentContent__addButton").addEventListener("click", formValidation)
+  $('#commentContent__addButton').click(formValidation)
 }
 
 // function that adds the comments to the page
@@ -89,18 +89,17 @@ function addCommentToPage(commentName, commentDate, commentComment, idString) {
   div.appendChild(delete1);
 
   // write the div html to the page in reverse order
-  var before1 = document.getElementById("commentJava");
-  before1.insertBefore(div, before1.childNodes[0]);
-  //document.getElementById('commentJava').appendChild(div);
+  // var before1 = document.getElementById("commentJava");
+  // before1.insertBefore(div, before1.childNodes[0]);
+  $('#commentJava').prepend(div);
 
 };
 
 
 function addCommentEvent() {
   // retrieve the values inputted in the form
-  var nameValue = document.forms["commentSubmit"]["name"].value;
-  var commentValue = document.forms["commentSubmit"]["comment"].value;
-  //var today = new Date();
+  var nameValue = $('#name').val()
+  var commentValue = $('#comment').val()
 
   //assign form data into json array
   var data = {
@@ -123,8 +122,7 @@ function addCommentEvent() {
 
     // call the getComment function to load comments to page
     getComments();
-  })
-    .catch(error => console.log(error));
+  }).catch(error => console.log(error));
 
   //reset the form to blank
   //document.getElementById("commentSubmit").reset();
