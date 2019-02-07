@@ -211,6 +211,25 @@ nav li:hover {
   }
 }
 
+#toTopButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: 1px $white solid;
+  outline: none;
+  background-color: $black;
+  color: $white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#toTopButton:hover {
+  background-color: $silver;
+}
 
 /* ------- MAIN CONTENT ------ */
 

@@ -17,6 +17,9 @@ function getShows() {
 // get the shows and load to page after page has loaded
 $(function () {
   getShows()
+  // button for going to top of page
+  window.onscroll = function () { toTopButtonDisplay() }
+  $('#toTopButton').click(scrollUp)
 })
 
 // function that adds the comments to the page
@@ -73,3 +76,19 @@ function addConcerts(concertDate, concertVenue, concertLocation, concertId) {
 function soldOut() {
   alert('Sold Out! =(')
 };
+
+
+// function to display button that goes to top of page
+function toTopButtonDisplay() {
+  if ($('body,html').scrollTop() > 50 || document.documentElement.scrollTop > 50) {
+    $('#toTopButton').show()
+  } else {
+    $('#toTopButton').hide()
+  }
+}
+
+// function to go to the top of the page
+function scrollUp() {
+  $('body,html').scrollTop(0);
+  document.documentElement.scrollTop = 0;
+}

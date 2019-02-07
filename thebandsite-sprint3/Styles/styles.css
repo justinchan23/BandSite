@@ -178,6 +178,26 @@ nav li:hover {
   background-image: url("../Assets/Images/album_hero.jpg");
 }
 
+#toTopButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: 1px #FFFFFF solid;
+  outline: none;
+  background-color: #323232;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#toTopButton:hover {
+  background-color: #AFAFAF;
+}
+
 /* ------- MAIN CONTENT ------ */
 .content {
   display: -webkit-box;

@@ -21,6 +21,9 @@ $(function () {
   getComments();
   // event listener for adding a comment
   $('#commentContent__addButton').click(formValidation)
+  // button for going to top of page
+  window.onscroll = function () { toTopButtonDisplay() }
+  $('#toTopButton').click(scrollUp)
 })
 
 // function that adds the comments to the page
@@ -176,18 +179,18 @@ function likeFunc() {
       // change like button text on page to acknowledge like
       $(`#${likeId}`).children('button.commentContent__like').text('You liked this')
       // update the likes on the button after 2 seconds
-      setTimeout(function() { likeButtonUpdate(likeNum) }, 2000)
+      setTimeout(function () { likeButtonUpdate(likeNum) }, 2000)
     })
     .catch(error => console.log(error));
 
-    // function to update like button
-    function likeButtonUpdate(likeNumber) {
-      if (likeNumber === 1) {
-        $(`#${likeId}`).children('button.commentContent__like').text(`${likeNumber} Like`)
-      } else {
-        $(`#${likeId}`).children('button.commentContent__like').text(`${likeNumber} Likes`)
-      }
+  // function to update like button
+  function likeButtonUpdate(likeNumber) {
+    if (likeNumber === 1) {
+      $(`#${likeId}`).children('button.commentContent__like').text(`${likeNumber} Like`)
+    } else {
+      $(`#${likeId}`).children('button.commentContent__like').text(`${likeNumber} Likes`)
     }
+  }
 
 }
 
@@ -209,4 +212,19 @@ function formValidation() {
     // if the form fields are validated, proceed to add comment to page
     addCommentEvent();
   }
+}
+
+// function to display button that goes to top of page
+function toTopButtonDisplay() {
+  if ($('body,html').scrollTop() > 50 || document.documentElement.scrollTop > 50) {
+    $('#toTopButton').show()
+  } else {
+    $('#toTopButton').hide()
+  }
+}
+
+// function to go to the top of the page
+function scrollUp() {
+  $('body,html').scrollTop(0);
+  document.documentElement.scrollTop = 0;
 }
