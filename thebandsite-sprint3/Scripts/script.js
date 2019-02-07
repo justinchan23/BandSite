@@ -5,7 +5,7 @@ const apiKey = "?api_key=25cadaa5-9cad-4892-a867-f96564af9f04";
 
 // fetch the comments from the api and load to page
 function getComments() {
-  axios.get(url + apiKey)
+  axios.get(`${url}${apiKey}`)
     .then(response => {
       var comment = response.data;
       comment.forEach(value => {
@@ -50,17 +50,17 @@ function addCommentToPage(commentName, commentDate, commentComment, idString, li
 
   // conditional to determine output of days, hours, minutes or seconds
   if (days > 0) {
-    dateSince = days + " days ago";
+    dateSince = `${days} days ago`;
   } else if (days == 0 & hours == 1) {
-    dateSince = hours + " hour ago";
+    dateSince = `${hours} hour ago`;
   } else if (days == 0 & hours > 0) {
-    dateSince = hours + " hours ago";
+    dateSince = `${hours} hours ago`;
   } else if (hours == 0 & minutes == 1) {
-    dateSince = minutes + " minute ago"
+    dateSince = `${minutes} minute ago`;
   } else if (hours == 0 & minutes > 0) {
-    dateSince = minutes + " minutes ago"
+    dateSince = `${minutes} minutes ago`;
   } else {
-    dateSince = seconds + " seconds ago"
+    dateSince = `${seconds} seconds ago`;
   };
 
 
@@ -91,9 +91,9 @@ function addCommentToPage(commentName, commentDate, commentComment, idString, li
   // like button
   var like = document.createElement("button");
   if (likesCount === 1) {
-    like.innerHTML = likesCount + " Like"
+    like.innerHTML = `${likesCount} Like`
   } else {
-    like.innerHTML = likesCount + " Likes"
+    like.innerHTML = `${likesCount} Likes`
   }
   //like.innerHTML = likesCount + " Likes"
   like.className = "commentContent__like";
@@ -104,7 +104,6 @@ function addCommentToPage(commentName, commentDate, commentComment, idString, li
 
   // add like button to comment div
   div.appendChild(like);
-
 
   // write the div html to the page in reverse order
   $('#commentJava').prepend(div);
@@ -189,9 +188,9 @@ function likeFunc() {
     // function to update like button
     function likeButtonUpdate(likeNumber) {
       if (likeNumber === 1) {
-        $(`#${likeId}`).children('button.commentContent__like').text(likeNumber + ' Like')
+        $(`#${likeId}`).children('button.commentContent__like').text(`${likeNumber} Like`)
       } else {
-        $(`#${likeId}`).children('button.commentContent__like').text(likeNumber + ' Likes')
+        $(`#${likeId}`).children('button.commentContent__like').text(`${likeNumber} Likes`)
       }
     }
 
@@ -202,8 +201,8 @@ function likeFunc() {
 // check the form to make sure all fields are filled out
 function formValidation() {
   // retrive value of form
-  var formName = document.forms["commentSubmit"]["name"].value;
-  var formComment = document.forms["commentSubmit"]["comment"].value;
+  var formName = $('#name').val()
+  var formComment = $('#comment').val()
   if (formName === "" || formComment === "") {
     // if form fields are not valid, alert and do not add comment
     alert("All fields must be filled out");
