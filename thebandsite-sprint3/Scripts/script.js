@@ -131,13 +131,11 @@ function addCommentEvent() {
   }).then(reloadComments = () => {
     // remove all the comments from the page
     $('#commentJava').empty();
-
     // call the getComment function to load comments to page
     getComments();
+    //reset the form to blank
+    $('#commentSubmit')[0].reset();
   }).catch(error => console.log(error));
-
-  //reset the form to blank
-  $('#commentSubmit')[0].reset();
 
 }
 
