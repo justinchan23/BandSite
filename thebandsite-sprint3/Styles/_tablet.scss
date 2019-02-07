@@ -8,6 +8,33 @@
   .content__shows, .commentContent__main, .photoContent__photoGallery {
     width: 1080px;
   }
+
+  .main__artistNameEffect {
+    animation: slidein 3s;
+  }
+
+  .main__background {
+    animation: fade-in 2s
+  }
+
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+    }
+
+    to {
+      margin-left: 180px;
+    }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
 @media screen and (max-width: 1400px) {
@@ -153,7 +180,7 @@
   }
 
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1400px) {
     .main__artistNameEffect {
       animation: slidein 3s;
     }
@@ -168,7 +195,7 @@
       }
   
       to {
-        margin-left: 12%;
+        margin-left: 24px;
       }
     }
 

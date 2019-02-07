@@ -638,6 +638,46 @@ input:focus, textarea:focus {
   .content__shows, .commentContent__main, .photoContent__photoGallery {
     width: 1080px;
   }
+  .main__artistNameEffect {
+    -webkit-animation: slidein 3s;
+            animation: slidein 3s;
+  }
+  .main__background {
+    -webkit-animation: fade-in 2s;
+            animation: fade-in 2s;
+  }
+  @-webkit-keyframes slidein {
+    from {
+      margin-left: 100%;
+    }
+    to {
+      margin-left: 180px;
+    }
+  }
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+    }
+    to {
+      margin-left: 180px;
+    }
+  }
+  @-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
 @media screen and (max-width: 1400px) {
@@ -750,7 +790,7 @@ input:focus, textarea:focus {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1400px) {
   .main__artistNameEffect {
     -webkit-animation: slidein 3s;
             animation: slidein 3s;
@@ -764,7 +804,7 @@ input:focus, textarea:focus {
       margin-left: 100%;
     }
     to {
-      margin-left: 12%;
+      margin-left: 24px;
     }
   }
   @keyframes slidein {
@@ -772,7 +812,7 @@ input:focus, textarea:focus {
       margin-left: 100%;
     }
     to {
-      margin-left: 12%;
+      margin-left: 24px;
     }
   }
   @-webkit-keyframes fade-in {
