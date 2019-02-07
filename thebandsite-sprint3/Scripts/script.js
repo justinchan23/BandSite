@@ -117,7 +117,7 @@ function addCommentEvent() {
   var nameValue = $('#name').val()
   var commentValue = $('#comment').val()
 
-  //assign form data into json array
+  //assign form data into var
   var data = {
     "name": nameValue,
     "comment": commentValue
@@ -177,13 +177,26 @@ function likeFunc() {
 
   //like the comment and send to the api
   axios.put(url + likeId + '/like' + apiKey)
-    //.then(response => console.log(response))
+    .then(response => {
+      var likeNum = response.data.likes
+      // change like button text on page to acknowledge like
+      $(`#${likeId}`).children('button.commentContent__like').text('You liked this')
+      // update the likes on the button after 2 seconds
+      setTimeout(function() { likeButtonUpdate(likeNum) }, 2000)
+    })
     .catch(error => console.log(error));
 
-  // change like button text on page
-  $(`#${likeId}`).children('button.commentContent__like').text('You liked this')
+    // function to update like button
+    function likeButtonUpdate(likeNumber) {
+      if (likeNumber === 1) {
+        $(`#${likeId}`).children('button.commentContent__like').text(likeNumber + ' Like')
+      } else {
+        $(`#${likeId}`).children('button.commentContent__like').text(likeNumber + ' Likes')
+      }
+    }
 
 }
+
 
 
 // check the form to make sure all fields are filled out
