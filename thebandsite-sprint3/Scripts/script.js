@@ -10,7 +10,7 @@ function getComments() {
       var comment = response.data;
       comment.forEach(value => {
         var dateCon = new Date(value.timestamp);
-        addCommentToPage(value.name, dateCon, value.comment, value.id);
+        addCommentToPage(value.name, dateCon, value.comment, value.id, value.likes);
       })
     })
     .catch(error => console.log(error));
@@ -24,7 +24,7 @@ $(function () {
 })
 
 // function that adds the comments to the page
-function addCommentToPage(commentName, commentDate, commentComment, idString) {
+function addCommentToPage(commentName, commentDate, commentComment, idString, likesCount) {
   // calculate days since last post
   var date1 = new Date(commentDate).getTime();
   var today = new Date().getTime();
@@ -76,6 +76,7 @@ function addCommentToPage(commentName, commentDate, commentComment, idString) {
   `
   // end of div creation
 
+
   // delete button
   var delete1 = document.createElement("button");
   delete1.innerHTML = "Delete"
@@ -86,6 +87,24 @@ function addCommentToPage(commentName, commentDate, commentComment, idString) {
 
   // add delete button to comment div
   div.appendChild(delete1);
+
+  // like button
+  var like = document.createElement("button");
+  if (likesCount === 1) {
+    like.innerHTML = likesCount + " Like"
+  } else {
+    like.innerHTML = likesCount + " Likes"
+  }
+  //like.innerHTML = likesCount + " Likes"
+  like.className = "commentContent__like";
+  like.id = idString;
+  like.setAttribute("likes", likesCount)
+  // event listener for liking comment
+  like.addEventListener('click', likeFunc);
+
+  // add like button to comment div
+  div.appendChild(like);
+
 
   // write the div html to the page in reverse order
   $('#commentJava').prepend(div);
@@ -151,6 +170,22 @@ function deleteComment() {
 }
 
 
+// like comment function
+function likeFunc() {
+  // retrieve the id of the button clicked
+  var likeId = this.id;
+
+  //like the comment and send to the api
+  axios.put(url + likeId + '/like' + apiKey)
+    //.then(response => console.log(response))
+    .catch(error => console.log(error));
+
+  // change like button text on page
+  $(`#${likeId}`).children('button.commentContent__like').text('You liked this')
+
+}
+
+
 // check the form to make sure all fields are filled out
 function formValidation() {
   // retrive value of form
@@ -169,24 +204,3 @@ function formValidation() {
     addCommentEvent();
   }
 }
-
-/*
-// this function is used for testing purposes only
-const fill = () => {
-
-  //these values must be changed to reflect those in your html
-  var nameFieldId = 'name' //the ID of the 'name' field in your form
-  var commentFieldId = 'comment'//the ID of the 'comment' field in your form
-  var commentButtonId = 'commentContent__addButton'//the ID of the 'comment' button in your form
-
-  // ----------
-  // do not edit the code below this line
-  var nameValue = 'First Lastname'
-  var commentValue = 'Lorem ipsum dolor sit amet, an ridens facilis fuisset duo, eum ea harum dolore. Error graece oblique at vim. Tation timeam eleifend qui et. Ex soluta scribentur est, an viderer senserit mei, viris essent quodsi sea te. Probo tincidunt in his, tota posse duo ne.'
-  document.getElementById(nameFieldId).value = nameValue
-  document.getElementById(commentFieldId).value = commentValue
-  var submit = document.getElementById(commentButtonId)
-  submit.click();
-  return 'Success!'
-}
-*/
