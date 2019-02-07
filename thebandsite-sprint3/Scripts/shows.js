@@ -4,7 +4,7 @@ const apiKey = "?api_key=b23f4ee5-c3bf-4eea-8b67-01d39c9c407e";
 
 function getShows() {
   // fetch the shows from the api and load to page
-  axios.get(url + apiKey)
+  axios.get(`${url}${apiKey}`)
     .then(response => {
       var concert = response.data
       concert.forEach(value => {
@@ -52,7 +52,7 @@ function addConcerts(concertDate, concertVenue, concertLocation, concertId) {
   var button2 = document.createElement("button");
   button1.className = "table__button";
   button2.className = "table__ticketButton";
-  button2.id = "ticketButton " + concertId;
+  button2.id = `ticketButton ${concertId}`
   button2.innerHTML = "BUY TICKETS";
   button1.appendChild(button2);
   button1.addEventListener('click', soldOut);

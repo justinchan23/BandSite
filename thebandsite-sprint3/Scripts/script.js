@@ -95,7 +95,6 @@ function addCommentToPage(commentName, commentDate, commentComment, idString, li
   } else {
     like.innerHTML = `${likesCount} Likes`
   }
-  //like.innerHTML = likesCount + " Likes"
   like.className = "commentContent__like";
   like.id = idString;
   like.setAttribute("likes", likesCount)
@@ -124,7 +123,7 @@ function addCommentEvent() {
 
 
   //post the comment to the api
-  axios.post(url + apiKey, data, {
+  axios.post(`${url}${apiKey}`, data, {
     method: 'post',
     //body: JSON.stringify(data),
     headers: {
@@ -155,7 +154,7 @@ function deleteComment() {
   };
 
   //delete the comment from the api
-  axios.delete(url + deleteCommentId + apiKey, {
+  axios.delete(`${url}${deleteCommentId}${apiKey}`, {
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json'
@@ -175,7 +174,7 @@ function likeFunc() {
   var likeId = this.id;
 
   //like the comment and send to the api
-  axios.put(url + likeId + '/like' + apiKey)
+  axios.put(`${url}${likeId}/like${apiKey}`)
     .then(response => {
       var likeNum = response.data.likes
       // change like button text on page to acknowledge like
