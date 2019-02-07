@@ -750,6 +750,49 @@ input:focus, textarea:focus {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .main__artistNameEffect {
+    -webkit-animation: slidein 3s;
+            animation: slidein 3s;
+  }
+  .main__background {
+    -webkit-animation: fade-in 2s;
+            animation: fade-in 2s;
+  }
+  @-webkit-keyframes slidein {
+    from {
+      margin-left: 100%;
+    }
+    to {
+      margin-left: 12%;
+    }
+  }
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+    }
+    to {
+      margin-left: 12%;
+    }
+  }
+  @-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
 @media screen and (min-width: 780px) and (max-width: 1438px) {
   .p__shortBio1, .p__shortBio2 {
     width: 45%;

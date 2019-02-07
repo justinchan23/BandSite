@@ -124,7 +124,6 @@ function addCommentEvent() {
 
   //post the comment to the api
   axios.post(`${url}${apiKey}`, data, {
-    method: 'post',
     headers: {
       'Content-Type': 'application/json'
     }

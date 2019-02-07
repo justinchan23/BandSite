@@ -129,8 +129,9 @@
       height: 193px;
       padding-bottom: 16px;
     }
-
   }
+
+
   @media screen and (max-width: 1088px) {
     .photoContent__gallery {
       width: 264px;
@@ -149,8 +150,39 @@
     .content__shows {
       justify-content: space-evenly;
     }
-
   }
+
+
+  @media screen and (min-width: 768px) {
+    .main__artistNameEffect {
+      animation: slidein 3s;
+    }
+
+    .main__background {
+      animation: fade-in 2s
+    }
+    
+    @keyframes slidein {
+      from {
+        margin-left: 100%;
+      }
+  
+      to {
+        margin-left: 12%;
+      }
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+
+
   @media screen and (min-width: 780px) and (max-width: 1438px) {
     .p__shortBio1, .p__shortBio2 {
       width: 45%;
