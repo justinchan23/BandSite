@@ -147,18 +147,9 @@ function deleteComment() {
   // retrieve the id of the button clicked
   var deleteCommentId = this.id;
 
-  //assign id of comment to 'data' variable to send to api
-  var data = {
-    "id": deleteCommentId,
-  };
-
   //delete the comment from the api
-  axios.delete(`${url}${deleteCommentId}${apiKey}`, {
-    body: JSON.stringify(data),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })//.then(response => console.log(response))
+  axios.delete(`${url}${deleteCommentId}${apiKey}`)
+    //.then(response => console.log(response))
     .catch(error => console.log(error));
 
   // remove the comment from the page
