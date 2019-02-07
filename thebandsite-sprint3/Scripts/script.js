@@ -125,7 +125,6 @@ function addCommentEvent() {
   //post the comment to the api
   axios.post(`${url}${apiKey}`, data, {
     method: 'post',
-    //body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json'
     }
@@ -194,7 +193,6 @@ function likeFunc() {
     }
 
 }
-
 
 
 // check the form to make sure all fields are filled out
