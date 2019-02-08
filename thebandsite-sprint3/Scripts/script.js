@@ -22,7 +22,7 @@ $(function () {
   // event listener for adding a comment
   $('#commentContent__addButton').click(formValidation)
   // button for going to top of page
-  window.onscroll = function () { toTopButtonDisplay() }
+  $(window).scroll(function () { toTopButtonDisplay() })
   $('#toTopButton').click(scrollUp)
 })
 
@@ -68,10 +68,11 @@ function addCommentToPage(commentName, commentDate, commentComment, idString, li
 
 
   // create a div and place inside the comment section
-  var div = $('<div></div>')
-  $(div).addClass('commentJava__section')
-  $(div).attr('id', idString)
-  $(div).html(`
+  var div =
+    $('<div></div>')
+      .addClass('commentJava__section')
+      .attr('id', idString)
+      .html(`
   <img src="Assets/Images/Gallery/Mohan-muruge.jpg" class="commentJava__pic">
   <h4 class="commentJava__name">${commentName}</h4>
   <h5 class="commentJava__date">${dateSince}</h5>
@@ -81,12 +82,12 @@ function addCommentToPage(commentName, commentDate, commentComment, idString, li
 
 
   // delete button
-  var delete1 = $('<button></button>')
-  $(delete1).html('Delete')
-  $(delete1).addClass('commentContent__delete')
-  $(delete1).attr('id', idString)
-  // event listener for deleting comment
-  $(delete1).click(deleteComment)
+  var delete1 =
+    $('<button></button>')
+      .html('Delete')
+      .addClass('commentContent__delete')
+      .attr('id', idString)
+      .click(deleteComment)
 
   // add delete button to comment div
   $(div).append(delete1)
@@ -99,10 +100,9 @@ function addCommentToPage(commentName, commentDate, commentComment, idString, li
     $(like).html(`${likesCount} Likes`)
   }
   $(like).addClass('commentContent__like')
-  $(like).attr('id', idString)
-  $(like).attr('likes', likesCount)
-  // event listener for liking comment
-  $(like).click(likeFunc)
+    .attr('id', idString)
+    .attr('likes', likesCount)
+    .click(likeFunc)
 
   // add like button to comment div
   $(div).append(like)
@@ -210,7 +210,7 @@ function formValidation() {
 
 // function to display button that goes to top of page
 function toTopButtonDisplay() {
-  if ($('body,html').scrollTop() > 50 || document.documentElement.scrollTop > 50) {
+  if ($('body,html').scrollTop() > 50 || $(document.documentElement).scrollTop > 50) {
     $('#toTopButton').show()
   } else {
     $('#toTopButton').hide()
@@ -220,5 +220,5 @@ function toTopButtonDisplay() {
 // function to go to the top of the page
 function scrollUp() {
   $('body,html').scrollTop(0);
-  document.documentElement.scrollTop = 0;
+  $(document.documentElement).scrollTop = 0;
 }
