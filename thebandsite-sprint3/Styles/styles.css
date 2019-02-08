@@ -663,8 +663,8 @@ input:focus, textarea:focus {
             animation: slidein 3s;
   }
   .main__background {
-    -webkit-animation: fade-in 2s;
-            animation: fade-in 2s;
+    -webkit-animation: fade-in 3s;
+            animation: fade-in 3s;
   }
   @-webkit-keyframes slidein {
     from {

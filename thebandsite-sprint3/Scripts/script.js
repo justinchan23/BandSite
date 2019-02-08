@@ -68,44 +68,44 @@ function addCommentToPage(commentName, commentDate, commentComment, idString, li
 
 
   // create a div and place inside the comment section
-  var div = document.createElement("div");
-  div.className = "commentJava__section";
-  div.id = idString;
-  div.innerHTML = `
+  var div = $('<div></div>')
+  $(div).addClass('commentJava__section')
+  $(div).attr('id', idString)
+  $(div).html(`
   <img src="Assets/Images/Gallery/Mohan-muruge.jpg" class="commentJava__pic">
   <h4 class="commentJava__name">${commentName}</h4>
   <h5 class="commentJava__date">${dateSince}</h5>
   <p class="commentJava__comment">${commentComment}</p>
-  `
+  `)
   // end of div creation
 
 
   // delete button
-  var delete1 = document.createElement("button");
-  delete1.innerHTML = "Delete"
-  delete1.className = "commentContent__delete";
-  delete1.id = idString;
+  var delete1 = $('<button></button>')
+  $(delete1).html('Delete')
+  $(delete1).addClass('commentContent__delete')
+  $(delete1).attr('id', idString)
   // event listener for deleting comment
-  delete1.addEventListener('click', deleteComment);
+  $(delete1).click(deleteComment)
 
   // add delete button to comment div
-  div.appendChild(delete1);
+  $(div).append(delete1)
 
   // like button
-  var like = document.createElement("button");
+  var like = $('<button></button>')
   if (likesCount === 1) {
-    like.innerHTML = `${likesCount} Like`
+    $(like).html(`${likesCount} Like`)
   } else {
-    like.innerHTML = `${likesCount} Likes`
+    $(like).html(`${likesCount} Likes`)
   }
-  like.className = "commentContent__like";
-  like.id = idString;
-  like.setAttribute("likes", likesCount)
+  $(like).addClass('commentContent__like')
+  $(like).attr('id', idString)
+  $(like).attr('likes', likesCount)
   // event listener for liking comment
-  like.addEventListener('click', likeFunc);
+  $(like).click(likeFunc)
 
   // add like button to comment div
-  div.appendChild(like);
+  $(div).append(like)
 
   // write the div html to the page in reverse order
   $('#commentJava').prepend(div);
@@ -124,20 +124,24 @@ function addCommentEvent() {
     "comment": commentValue
   };
 
-
-  //post the comment to the api
-  axios.post(`${url}${apiKey}`, data, {
+  var header = {
     headers: {
       'Content-Type': 'application/json'
     }
-  }).then(reloadComments = () => {
-    // remove all the comments from the page
-    $('#commentJava').empty();
-    // call the getComment function to load comments to page
-    getComments();
-    //reset the form to blank
-    $('#commentSubmit')[0].reset();
-  }).catch(error => console.log(error));
+  }
+
+
+  //post the comment to the api
+  axios.post(`${url}${apiKey}`, data, header)
+    //.then(response => console.log(response))
+    .then(reloadComments = () => {
+      // remove all the comments from the page
+      $('#commentJava').empty();
+      // call the getComment function to load comments to page
+      getComments();
+      //reset the form to blank
+      $('#commentSubmit')[0].reset();
+    }).catch(error => console.log(error));
 
 }
 
@@ -169,8 +173,8 @@ function likeFunc() {
       var likeNum = response.data.likes
       // change like button text on page to acknowledge like
       $(`#${likeId}`).children('button.commentContent__like').text('You liked this')
-      // update the likes on the button after 2 seconds
-      setTimeout(function () { likeButtonUpdate(likeNum) }, 2000)
+      // update the likes on the button after 1.5 seconds
+      setTimeout(function () { likeButtonUpdate(likeNum) }, 1500)
     })
     .catch(error => console.log(error));
 
@@ -182,7 +186,6 @@ function likeFunc() {
       $(`#${likeId}`).children('button.commentContent__like').text(`${likeNumber} Likes`)
     }
   }
-
 }
 
 
