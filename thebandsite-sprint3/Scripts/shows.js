@@ -27,7 +27,7 @@ function addConcerts(concertDate, concertVenue, concertLocation, concertId) {
 
   // create a table row and place concert listing inside
   var tr =
-    $('<tr></tr')
+    $('<tr></tr>')
       .attr('id', concertId)
       .html(`
   <td class="table__padding table__date" data-label="DATE">${concertDate}</td>
