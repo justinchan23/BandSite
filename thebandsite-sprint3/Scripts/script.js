@@ -86,7 +86,7 @@ function addCommentToPage(commentName, commentDate, commentComment, idString, li
     $('<button></button>')
       .html('Delete')
       .addClass('commentContent__delete')
-      .attr('id', idString)
+      .attr('deleteId', idString)
       .click(deleteComment)
 
   // add delete button to comment div
@@ -100,7 +100,7 @@ function addCommentToPage(commentName, commentDate, commentComment, idString, li
     $(like).html(`${likesCount} Likes`)
   }
   $(like).addClass('commentContent__like')
-    .attr('id', idString)
+    .attr('likeId', idString)
     .attr('likes', likesCount)
     .click(likeFunc)
 
@@ -149,7 +149,7 @@ function addCommentEvent() {
 // delete comment function
 function deleteComment() {
   // retrieve the id of the button clicked
-  var deleteCommentId = this.id;
+  var deleteCommentId = $(this).attr('deleteId')
 
   //delete the comment from the api
   axios.delete(`${url}${deleteCommentId}${apiKey}`)
@@ -165,7 +165,7 @@ function deleteComment() {
 // like comment function
 function likeFunc() {
   // retrieve the id of the button clicked
-  var likeId = this.id;
+  var likeId = $(this).attr('likeId')
 
   //like the comment and send to the api
   axios.put(`${url}${likeId}/like${apiKey}`)
