@@ -130,19 +130,53 @@ function addCommentEvent() {
     }
   }
 
-
   //post the comment to the api
   axios.post(`${url}${apiKey}`, data, header)
     //.then(response => console.log(response))
-    .then(reloadComments = () => {
-      // remove all the comments from the page
-      $('#commentJava').empty();
-      // call the getComment function to load comments to page
-      getComments();
-      //reset the form to blank
-      $('#commentSubmit')[0].reset();
-    }).catch(error => console.log(error));
+    .then(updateComments = () => {
+      axios.get(`${url}${apiKey}`)
+        .then(response => {
+          var comment = response.data;
+          var a = response.data.length - 1
+          var dateCon = new Date(comment[a].timestamp);
+          // add the new comment to the page
+          addCommentToPage(comment[a].name, dateCon, comment[a].comment, comment[a].id, comment[a].likes);
 
+          // update the time stamp of all the comments on the page
+          // calculate the new time difference
+          comment.forEach(value => {
+            var date1 = new Date(value.timestamp).getTime();
+            var today = new Date().getTime();
+            var difference = today - date1;
+            difference = difference / 1000;
+            var seconds = Math.floor(difference % 60);
+            difference = difference / 60;
+            var minutes = Math.floor(difference % 60);
+            difference = difference / 60;
+            var hours = Math.floor(difference % 24);
+            var days = Math.floor(difference / 24);
+            if (days > 0) {
+              dateSince = `${days} days ago`;
+            } else if (days == 0 & hours == 1) {
+              dateSince = `${hours} hour ago`;
+            } else if (days == 0 & hours > 0) {
+              dateSince = `${hours} hours ago`;
+            } else if (hours == 0 & minutes == 1) {
+              dateSince = `${minutes} minute ago`;
+            } else if (hours == 0 & minutes > 0) {
+              dateSince = `${minutes} minutes ago`;
+            } else {
+              dateSince = `${seconds} seconds ago`;
+            };
+            // only update the time stamp of each comment
+            $(`#${value.id}`).find('h5').html(dateSince)
+          })
+        })
+        .then(() => {
+          $('#commentSubmit')[0].reset();
+        })
+        .catch(error => console.log(error))
+    })
 }
 
 
