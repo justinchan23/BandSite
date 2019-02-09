@@ -28,44 +28,9 @@ $(function () {
 
 // function that adds the comments to the page
 function addCommentToPage(commentName, commentDate, commentComment, idString, likesCount) {
-  // calculate days since last post
-  var date1 = new Date(commentDate).getTime();
-  var today = new Date().getTime();
 
-  // calculate difference between dates in milliseconds
-  var difference = today - date1;
-
-  // calculate difference between dates in seconds
-  difference = difference / 1000;
-  var seconds = Math.floor(difference % 60);
-
-  // calculate difference between dates in minutes
-  difference = difference / 60;
-  var minutes = Math.floor(difference % 60);
-
-  // calculate difference between dates in hours
-  difference = difference / 60;
-  var hours = Math.floor(difference % 24);
-
-  // calculate difference between dates in days
-
-  var days = Math.floor(difference / 24);
-
-  // conditional to determine output of days, hours, minutes or seconds
-  if (days > 0) {
-    dateSince = `${days} days ago`;
-  } else if (days == 0 & hours == 1) {
-    dateSince = `${hours} hour ago`;
-  } else if (days == 0 & hours > 0) {
-    dateSince = `${hours} hours ago`;
-  } else if (hours == 0 & minutes == 1) {
-    dateSince = `${minutes} minute ago`;
-  } else if (hours == 0 & minutes > 0) {
-    dateSince = `${minutes} minutes ago`;
-  } else {
-    dateSince = `${seconds} seconds ago`;
-  };
-
+  // calculate time since last post
+  dateCalculator(commentDate) // this function returns the value in a variable 'dateSince'
 
   // create a div and place inside the comment section
   var div =
@@ -118,12 +83,13 @@ function addCommentEvent() {
   var nameValue = $('#name').val()
   var commentValue = $('#comment').val()
 
-  //assign form data into var
+  // assign form data into var
   var data = {
     "name": nameValue,
     "comment": commentValue
   };
 
+  // header for posting to the api
   var header = {
     headers: {
       'Content-Type': 'application/json'
@@ -141,33 +107,9 @@ function addCommentEvent() {
           var dateCon = new Date(comment[a].timestamp);
           // add the new comment to the page
           addCommentToPage(comment[a].name, dateCon, comment[a].comment, comment[a].id, comment[a].likes);
-
           // update the time stamp of all the comments on the page
-          // calculate the new time difference
           comment.forEach(value => {
-            var date1 = new Date(value.timestamp).getTime();
-            var today = new Date().getTime();
-            var difference = today - date1;
-            difference = difference / 1000;
-            var seconds = Math.floor(difference % 60);
-            difference = difference / 60;
-            var minutes = Math.floor(difference % 60);
-            difference = difference / 60;
-            var hours = Math.floor(difference % 24);
-            var days = Math.floor(difference / 24);
-            if (days > 0) {
-              dateSince = `${days} days ago`;
-            } else if (days == 0 & hours == 1) {
-              dateSince = `${hours} hour ago`;
-            } else if (days == 0 & hours > 0) {
-              dateSince = `${hours} hours ago`;
-            } else if (hours == 0 & minutes == 1) {
-              dateSince = `${minutes} minute ago`;
-            } else if (hours == 0 & minutes > 0) {
-              dateSince = `${minutes} minutes ago`;
-            } else {
-              dateSince = `${seconds} seconds ago`;
-            };
+            dateCalculator(value.timestamp) // this function returns the value in a variable 'dateSince'
             // only update the time stamp of each comment
             $(`#${value.id}`).find('h5').html(dateSince)
           })
@@ -255,4 +197,49 @@ function toTopButtonDisplay() {
 function scrollUp() {
   $('body,html').scrollTop(0);
   $(document.documentElement).scrollTop = 0;
+}
+
+
+// function to calculate date difference
+function dateCalculator (date) {
+  // calculate days since last post
+  var date1 = new Date(date).getTime();
+  var today = new Date().getTime();
+
+  // calculate difference between dates in milliseconds
+  var difference = today - date1;
+
+  // calculate difference between dates in seconds
+  difference = difference / 1000;
+  var seconds = Math.floor(difference % 60);
+
+  // calculate difference between dates in minutes
+  difference = difference / 60;
+  var minutes = Math.floor(difference % 60);
+
+  // calculate difference between dates in hours
+  difference = difference / 60;
+  var hours = Math.floor(difference % 24);
+
+  // calculate difference between dates in days
+
+  var days = Math.floor(difference / 24);
+
+  // conditional to determine output of days, hours, minutes or seconds
+  if (days > 0) {
+    dateSince = `${days} days ago`;
+  } else if (days == 0 & hours == 1) {
+    dateSince = `${hours} hour ago`;
+  } else if (days == 0 & hours > 0) {
+    dateSince = `${hours} hours ago`;
+  } else if (hours == 0 & minutes == 1) {
+    dateSince = `${minutes} minute ago`;
+  } else if (hours == 0 & minutes > 0) {
+    dateSince = `${minutes} minutes ago`;
+  } else {
+    dateSince = `${seconds} seconds ago`;
+  };
+
+  // return the value
+  return dateSince
 }
