@@ -45,7 +45,6 @@ function addCommentToPage(commentName, commentDate, commentComment, idString, li
   `)
   // end of div creation
 
-
   // delete button
   var delete1 =
     $('<button></button>')
@@ -105,7 +104,7 @@ function addCommentEvent() {
           var comment = response.data;
           var a = response.data.length - 1
           var dateCon = new Date(comment[a].timestamp);
-          // add the new comment to the page
+          // add only the new comment to the page
           addCommentToPage(comment[a].name, dateCon, comment[a].comment, comment[a].id, comment[a].likes);
           // update the time stamp of all the comments on the page
           comment.forEach(value => {
