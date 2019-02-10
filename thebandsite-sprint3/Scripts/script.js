@@ -32,47 +32,31 @@ function addCommentToPage(commentName, commentDate, commentComment, idString, li
   // calculate time since last post
   dateCalculator(commentDate) // this function returns the value in a variable 'dateSince'
 
+  // like button logic
+  var likeBtn = 'Likes'
+  if (likesCount === 1) {
+    likeBtn = 'Like'
+  }
+
   // create a div and place inside the comment section
-  var div =
-    $('<div></div>')
-      .addClass('commentJava__section')
-      .attr('id', idString)
-      .html(`
+  var div = $(`
+  <div class="commentJava__section" id="${idString}">
   <img src="Assets/Images/Gallery/Mohan-muruge.jpg" class="commentJava__pic">
   <h4 class="commentJava__name">${commentName}</h4>
   <h5 class="commentJava__date">${dateSince}</h5>
   <p class="commentJava__comment">${commentComment}</p>
+  <button class="commentContent__delete" deleteId="${idString}">Delete</button>
+  <button class="commentContent__like" likeId="${idString}" likes="${likesCount}">${likesCount} ${likeBtn}</button>
+  </div>
   `)
   // end of div creation
 
-  // delete button
-  var delete1 =
-    $('<button></button>')
-      .html('Delete')
-      .addClass('commentContent__delete')
-      .attr('deleteId', idString)
-      .click(deleteComment)
-
-  // add delete button to comment div
-  $(div).append(delete1)
-
-  // like button
-  var like = $('<button></button>')
-  if (likesCount === 1) {
-    $(like).html(`${likesCount} Like`)
-  } else {
-    $(like).html(`${likesCount} Likes`)
-  }
-  $(like).addClass('commentContent__like')
-    .attr('likeId', idString)
-    .attr('likes', likesCount)
-    .click(likeFunc)
-
-  // add like button to comment div
-  $(div).append(like)
-
   // write the div html to the page in reverse order
   $('#commentJava').prepend(div);
+
+  // event listeners for delete and like button
+  $(`[deleteid=${idString}]`).click(deleteComment)
+  $(`[likeId=${idString}]`).click(likeFunc)
 
 };
 
@@ -104,7 +88,7 @@ function addCommentEvent() {
           var comment = response.data;
           var a = response.data.length - 1
           var dateCon = new Date(comment[a].timestamp);
-          // add only the new comment to the page
+          // add the new comment to the page
           addCommentToPage(comment[a].name, dateCon, comment[a].comment, comment[a].id, comment[a].likes);
           // update the time stamp of all the comments on the page
           comment.forEach(value => {
@@ -200,7 +184,7 @@ function scrollUp() {
 
 
 // function to calculate date difference
-function dateCalculator (date) {
+function dateCalculator(date) {
   // calculate days since last post
   var date1 = new Date(date).getTime();
   var today = new Date().getTime();
