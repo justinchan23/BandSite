@@ -15,9 +15,9 @@ import random
 
 
 # these values must be changed to reflect those in your html
-page_link = 'http://127.0.0.1:5500/webDevProjects/thebandsite-sprint3/index.html' # put the link to your page here
+page_link = 'http://127.0.0.1:5500/thebandsite-sprint3/' # put the link to your page here
 commentButtonId = 'commentContent__addButton' #the ID of the 'commemt' button in your form
-numberOfComments = 1000 #the number of comments you would like to add to the page
+numberOfComments = 5 #the number of comments you would like to add to the page
 
 
 
@@ -35,9 +35,6 @@ for x in range(numberOfComments):
     b = random.randint(0,9)
 
 
-
-    # name_field = driver.find_element_by_id(nameFieldId)
-    # name_field.send_keys(name[a])
 
     nameIn = name[a]
     driver.execute_script("""
