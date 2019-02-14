@@ -1,1 +1,1 @@
-demo: http://bandsite.surge.sh/
+Demo: http://bandsite.surge.sh/
